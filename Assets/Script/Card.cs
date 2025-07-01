@@ -25,7 +25,6 @@ public class Card : MonoBehaviour
 
     public void FlipCard()
     {
-        Debug.Log("FlipCard");
         if (!isFlip)
         {
             isFlip = true;

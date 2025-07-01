@@ -28,6 +28,14 @@ public class InGameManager : MonoBehaviour
     {
         if(Instance == null)
             Instance = this;
+
+        if (!PlayerPrefs.HasKey("isFirstRun"))
+        {
+            PlayerPrefs.SetInt("isFirstRun", 1);
+            ArchievementManager.AddArchievement("1");
+        }
+
+        ArchievementManager.Instance.CreateUI();
     }
 
     void Start()

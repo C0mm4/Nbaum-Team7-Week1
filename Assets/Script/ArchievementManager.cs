@@ -15,7 +15,9 @@ public class ArchievementManager : MonoBehaviour
     public int qc;
     public static GameData gameData;
 
-    
+    public GameObject archievementUIPrefs;
+
+
     private static List<Archievement> archievements;
 
 
@@ -30,6 +32,10 @@ public class ArchievementManager : MonoBehaviour
         action += OnMatchEvent;
 
 
+        if (archievementUI == null)
+        {
+            CreateUI();
+        }
 
         gameData = new GameData();
         gameData.Init();
@@ -116,16 +122,26 @@ public class ArchievementManager : MonoBehaviour
         TextAsset jsonText = Resources.Load<TextAsset>("Data/Archievement");
         ArchievementList archievementList = JsonUtility.FromJson<ArchievementList>(jsonText.text);
         archievements = archievementList.list;
-
-        Debug.Log(archievements.Count);
-        foreach (Archievement archievement in archievements) 
-        {
-            Debug.Log(archievement.id);
-        }
     }
 
     public static Archievement FindArchievementByID(string id)
     {
         return archievements.FirstOrDefault(x => x.id == id);
+    }
+
+    public static void AddArchievement(string id)
+    {
+        if (!PlayerPrefs.HasKey($"A{id}"))
+        {
+            PlayerPrefs.SetInt($"A{id}", 1);
+            newArchivements.Enqueue(id);
+        }
+    }
+
+
+    public void CreateUI()
+    {
+        GameObject canvas = GameObject.Find("Canvas");
+        archievementUI = Instantiate(archievementUIPrefs, canvas.transform).GetComponent<ArchievementUI>(); ;
     }
 }
