@@ -49,7 +49,7 @@ public class InGameManager : MonoBehaviour
             AchievementManager.AddArchievement("1");
         }
 
-//        ArchievementManager.Instance.CreateUI();
+        AchievementManager.Instance.CreateUI();
     }
 
     void Start()

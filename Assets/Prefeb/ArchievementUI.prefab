@@ -94,8 +94,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isArise: 0
   animator: {fileID: 7375370122970434358}
-  archievementName: {fileID: 5520045520577150837}
-  archievementDescription: {fileID: 1062706044200372861}
+  achievementName: {fileID: 5520045520577150837}
+  achievementDescription: {fileID: 1062706044200372861}
 --- !u!95 &7375370122970434358
 Animator:
   serializedVersion: 5
