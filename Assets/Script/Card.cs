@@ -97,6 +97,7 @@ public class Card : MonoBehaviour
     {
         front.SetActive(false);
         back.SetActive(true);
+    }
     public void Match()
     {
         InGameManager.Instance.Two = this;
