@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     private float currentTime;
     private bool isPlaying;
 
+    public bool DebugMode;
     private void Awake()
     {
         if (instance == null) 
@@ -109,6 +110,8 @@ public class GameManager : MonoBehaviour
     public void QuitGame()
     {
 #if UNITY_EDITOR
+        if (GameManager.Instance.DebugMode)
+            PlayerPrefs.DeleteAll();
         UnityEditor.EditorApplication.isPlaying = false;
 #else
         Application.Quit();

@@ -18,6 +18,7 @@ public class ArchievementManager : MonoBehaviour
     
     private static List<Archievement> archievements;
 
+
     private void Awake()
     {
         if(instance == null)
@@ -35,10 +36,6 @@ public class ArchievementManager : MonoBehaviour
 
         LoadArchivements();
 
-
-
-
-
     }
 
     public static void OnFlipEvent()
@@ -49,14 +46,7 @@ public class ArchievementManager : MonoBehaviour
     public static void OnMatchEvent()
     {
         var archieve = FindArchievementByID("1");
-        if (archieve != null)
-        {
-            Debug.Log($"도전과제 발견: {archieve.title} - {archieve.description}");
-        }
-        else
-        {
-            Debug.Log("해당 ID의 도전과제를 찾을 수 없습니다.");
-        }
+
         newArchivements.Enqueue(archieve.id);
     }
 
@@ -89,8 +79,15 @@ public class ArchievementManager : MonoBehaviour
         {
             if (!archievementUI.isArise)
             {
-                archievementUI.SetNewArchivement(newArchivements.Peek());
-                newArchivements.Dequeue();
+                if (!PlayerPrefs.HasKey($"A{newArchivements.Peek()}"))
+                {
+                    archievementUI.SetNewArchivement(newArchivements.Peek());
+                    newArchivements.Dequeue();
+                }
+                else
+                {
+                    newArchivements.Dequeue();
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape)) 
