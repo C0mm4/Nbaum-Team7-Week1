@@ -4,7 +4,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance { get; private set; }
+    public static GameManager instance;
+    public static GameManager Instance {  get { return instance; } }
 
     public GameObject titlePanel;
     public GameObject inGamePanel;
@@ -24,8 +25,10 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (instance == null) 
+            instance = this;
+        
+        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
@@ -73,6 +76,7 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
         resultText.text = "게임 성공!";
         ShowResultPanel();
+        ArchievementManager.OnClearEvent();
     }
 
     public void GameFail()
@@ -80,6 +84,8 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
         resultText.text = "시간 초과!";
         ShowResultPanel();
+
+        ArchievementManager.OnFailEvent();
     }
 
     private void ShowResultPanel()
@@ -91,7 +97,13 @@ public class GameManager : MonoBehaviour
     public bool isMatched()
     {
         Debug.Log("매칭 확인 중...");
+
+        ArchievementManager.OnMatchEvent();
         return true;
+
+        // Add Fail Case
+        ArchievementManager.OnMatchFailEvent();
+        return false;
     }
 
     public void QuitGame()

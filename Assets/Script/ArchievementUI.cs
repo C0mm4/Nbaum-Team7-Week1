@@ -14,12 +14,14 @@ public class ArchievementUI : MonoBehaviour
     {
     }
 
-    public void SetNewArchivement()
+    public void SetNewArchivement(string path)
     {
         animator.SetBool("isArise", true);
         isArise = true;
 
         Invoke("EndAriseAnimation", 1.5f);
+
+
     }
 
     public void EndAriseAnimation()
