@@ -12,6 +12,7 @@ public class ArchievementManager : MonoBehaviour
     public ArchievementUI archievementUI;
 
     public int qc;
+    public string archivementPath = "archivement";
 
     private void Awake()
     {
@@ -67,7 +68,7 @@ public class ArchievementManager : MonoBehaviour
         {
             if (!archievementUI.isArise)
             {
-                archievementUI.SetNewArchivement();
+                archievementUI.SetNewArchivement(archivementPath + newArchivements.Peek().ToString());
                 newArchivements.Dequeue();
             }
         }

@@ -13,6 +13,7 @@ public class GameData : MonoBehaviour
     public static int missCombo;
     public static float lastMatchT;
 
+
     private void Awake()
     {
         if(instance == null)
