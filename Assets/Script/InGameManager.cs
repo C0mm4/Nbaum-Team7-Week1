@@ -48,6 +48,10 @@ public class InGameManager : MonoBehaviour
         if(Instance == null)
             Instance = this;
 
+    }
+
+    void Start()
+    {
         if (!PlayerPrefs.HasKey("isFirstRun"))
         {
             PlayerPrefs.SetInt("isFirstRun", 1);
@@ -55,10 +59,6 @@ public class InGameManager : MonoBehaviour
         }
 
         AchievementManager.Instance.CreateUI();
-    }
-
-    void Start()
-    {
         cards = cards.OrderBy(x => Random.Range(0f, 15f)).ToList();
 
         Maincard = cards.Take(12).ToList();
@@ -68,7 +68,7 @@ public class InGameManager : MonoBehaviour
         }
 
         //Test disable
-        Maincard = Maincard.OrderBy(x => Random.Range(0f, 24f)).ToList();
+//        Maincard = Maincard.OrderBy(x => Random.Range(0f, 24f)).ToList();
         //
 
         for (int i = 0; i < Maincard.Count; i++)

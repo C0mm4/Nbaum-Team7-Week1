@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance {  get { return instance; } }
 
     public bool DebugMode;
+    private static bool isFirstRun = true;
+    public bool isRun;
 
     public enum gameState
     {
@@ -21,6 +23,16 @@ public class GameManager : MonoBehaviour
             instance = this;
         state = gameState.Title;
         DontDestroyOnLoad(gameObject);
+
+        Debug.Log(isFirstRun);
+        if (isFirstRun)
+        {
+            if (DebugMode)
+            {
+                PlayerPrefs.DeleteAll();
+            }
+            isFirstRun = false;
+        }
     }
 
     private void Update()
