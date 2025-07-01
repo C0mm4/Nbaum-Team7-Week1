@@ -15,6 +15,7 @@ public class GameData
 
     public List<bool> archivementsLock = new List<bool>();
 
+    public int titleClickCnt = 0;
     public void Init()
     {
         if(instance == null)
