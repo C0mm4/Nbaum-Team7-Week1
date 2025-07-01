@@ -28,7 +28,7 @@ public class Card : MonoBehaviour
         if (!isFlip)
         {
             isFlip = true;
-            //anim.SetBool("isArise", true);
+            anim.SetBool("isOpen", true);
             front.SetActive(true);
             back.SetActive(false);
            
@@ -44,6 +44,7 @@ public class Card : MonoBehaviour
                 {
                     InGameManager.Instance.Two = this;
                     InGameManager.Instance.Matched();
+                    
 
                 }
             }
@@ -68,7 +69,7 @@ public class Card : MonoBehaviour
 
     void CloseCardHandler()
     {
-        //anim.SetBool("isArise", false);
+        anim.SetBool("isOpen", false);
         front.SetActive(false);
         back.SetActive(true);
 
