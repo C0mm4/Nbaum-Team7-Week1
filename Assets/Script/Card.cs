@@ -33,9 +33,8 @@ public class Card : MonoBehaviour
             back.SetActive(false);
            
 
-            if (InGameManager.Instance.leftCards < 2)
+            if (InGameManager.Instance.leftCards > 0)
             {
-                InGameManager.Instance.leftCards++;
                 if (InGameManager.Instance.One == null)
                 {   
                     InGameManager.Instance.One = this;

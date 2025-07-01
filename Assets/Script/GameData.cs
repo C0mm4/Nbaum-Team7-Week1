@@ -14,6 +14,8 @@ public class GameData
     public static int missCombo;
     public static float lastMatchT;
 
+    public static float titleTime = 0;
+
     public List<bool> archivementsLock = new List<bool>();
 
     public int titleClickCnt = 0;

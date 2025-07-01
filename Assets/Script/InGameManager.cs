@@ -11,8 +11,13 @@ public class InGameManager : MonoBehaviour
 
     public GameObject card;
 
+    public GameObject resultPanel;
+
     public Card One;
     public Card Two;
+
+    public float leftT;
+    
 
     List<string> cards = new List<string> 
     { 
@@ -36,7 +41,7 @@ public class InGameManager : MonoBehaviour
 
     
     public int leftCards = 0;
-    public int matchingPairs = 0;
+    public int matchingPairs = 2;
 
     private void Awake()
     {
@@ -74,9 +79,24 @@ public class InGameManager : MonoBehaviour
 
         }
         //ī�� �� ī��Ʈ
-        matchingPairs = Maincard.Count;
+        leftCards = Maincard.Count;
 
+        leftT = 60f;
+        GameManager.Instance.GameStart();
+    }
 
+    private void Update()
+    {
+        if(GameManager.state == GameManager.gameState.InPlay)
+        {
+            leftT -= Time.deltaTime;
+        }
+
+        if(leftT < 0f)
+        {
+            GameManager.state = GameManager.gameState.Result;
+            EndGame();
+        }
     }
 
     public void Matched()
@@ -85,20 +105,19 @@ public class InGameManager : MonoBehaviour
         {
             One.DestroyCard();
             Two.DestroyCard();
-            matchingPairs -= 2;
-            leftCards = 0;
-
-            if (matchingPairs == 0)
+            leftCards -= 2;
+            if (leftCards == 0)
             {
+                GameManager.state = GameManager.gameState.Result;
                 //��������
                 Invoke("EndGame", 0.5f);
             }
+            AchievementManager.AddArchievement("2");
         }
         else
         {
             One.CloseCard();
             Two.CloseCard();
-            leftCards = 0;
         }
 
         card_reset();
@@ -114,7 +133,7 @@ public class InGameManager : MonoBehaviour
 
     void EndGame()
     {
-        Time.timeScale = 0.0f;
+        GameManager.Instance.GameClear();
     }
 
 }
