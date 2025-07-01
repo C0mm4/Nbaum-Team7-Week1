@@ -29,8 +29,7 @@ public class Card : MonoBehaviour
         {
             isFlip = true;
             anim.SetBool("isOpen", true);
-            front.SetActive(true);
-            back.SetActive(false);
+            Invoke("OpenCardHanlder", 0.5f);
            
 
             if (InGameManager.Instance.leftCards > 0)
@@ -72,6 +71,12 @@ public class Card : MonoBehaviour
         front.SetActive(false);
         back.SetActive(true);
 
+    }
+
+    void OpenCardHanlder()
+    {
+        front.SetActive(true);
+        back.SetActive(false);
     }
 
     public void Setting(string image)

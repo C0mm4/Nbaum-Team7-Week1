@@ -54,7 +54,7 @@ public class InGameManager : MonoBehaviour
             AchievementManager.AddArchievement("1");
         }
 
-        AchievementManager.Instance.CreateUI();
+        //AchievementManager.Instance.CreateUI();
     }
 
     void Start()
@@ -103,13 +103,14 @@ public class InGameManager : MonoBehaviour
     {
         if (One.card == Two.card)
         {
+
             One.DestroyCard();
             Two.DestroyCard();
             leftCards -= 2;
             if (leftCards == 0)
             {
                 GameManager.state = GameManager.gameState.Result;
-                //��������
+                //End Game
                 Invoke("EndGame", 0.5f);
             }
             AchievementManager.AddArchievement("2");
@@ -136,5 +137,7 @@ public class InGameManager : MonoBehaviour
         resultPanel.SetActive(true);
         GameManager.Instance.GameClear();
     }
+
+  
 
 }
