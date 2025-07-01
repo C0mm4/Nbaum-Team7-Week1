@@ -28,10 +28,14 @@ public class ArchievementManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         action += OnMatchEvent;
 
+
         gameData = new GameData();
         gameData.Init();
 
         LoadArchivements();
+
+
+
 
     }
 
