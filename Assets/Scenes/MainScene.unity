@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 47775653}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c81ce0d9e0295a48b53ee26b2b4f2f6, type: 3}
+  m_Script: {fileID: 11500000, guid: 37399d416d11a7f43a804b20e24f2536, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &61003758
@@ -399,7 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.392}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -730,7 +730,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 232695826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 37ebc8f2cea2b4443bde019121ae14e7, type: 3}
+  m_Script: {fileID: 11500000, guid: 7bf14426aae262445be436936a744c16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   descView: {fileID: 1740077297}
@@ -1472,7 +1472,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1563878024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db8a03ee5984eb8498a3da9db6ab0ea2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6873d8e2319912b4cbe54ef9a2d1b45f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   imageMain: {fileID: 1913405340}
@@ -1495,7 +1495,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1740077298
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1701,7 +1701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -1736,7 +1736,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1927569953}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6619f57d0c5c9f44bad760178d9a6cf, type: 3}
+  m_Script: {fileID: 11500000, guid: 3482a560b1b9ca14e811b004319f1983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1929353064
