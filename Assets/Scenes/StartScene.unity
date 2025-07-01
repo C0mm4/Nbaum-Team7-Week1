@@ -217,8 +217,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isArise: 0
   animator: {fileID: 288679835}
-  archivementName: {fileID: 1512174705}
-  archivementDescription: {fileID: 799143661}
+  archievementName: {fileID: 1512174705}
+  archievementDescription: {fileID: 799143661}
 --- !u!95 &288679835
 Animator:
   serializedVersion: 5
@@ -691,14 +691,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 1
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uADF8\uB798 \uC6D0\uB798 \uADF8\uB7F0 \uBC95\uC774\uC57C\n\n5\uD68C \uC5F0\uC18D
-    \uC2E4\uD328"
+  m_Text: "\uADF8\uB798 \uC6D0\uB798 \uADF8\uB7F0 \uBC95\uC774\uC57C"
 --- !u!222 &1512174706
 CanvasRenderer:
   m_ObjectHideFlags: 0
