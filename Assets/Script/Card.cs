@@ -77,7 +77,7 @@ public class Card : MonoBehaviour
     public void Setting(string image)
     {
         card = image;
-        Images.sprite = Resources.Load<Sprite>(image);
+        Images.sprite = Resources.Load<Sprite>("Images/Portrait/"+image);
         
     }
 }
