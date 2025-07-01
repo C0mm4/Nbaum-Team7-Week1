@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class ArchievementManager : MonoBehaviour
@@ -8,10 +9,15 @@ public class ArchievementManager : MonoBehaviour
     private static ArchievementManager instance;
     public static ArchievementManager Instance {  get { return instance; } }
 
-    public static Queue<int> newArchivements = new Queue<int>();
+    public static Queue<string> newArchivements = new Queue<string>();
     public ArchievementUI archievementUI;
 
     public int qc;
+    public static GameData gameData;
+
+    
+    private static List<Archievement> archievements;
+
 
     private void Awake()
     {
@@ -21,21 +27,27 @@ public class ArchievementManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-        action += OnFlipEvent;
+        action += OnMatchEvent;
 
-        newArchivements.Enqueue(0);
-        newArchivements.Enqueue(0);
-        newArchivements.Enqueue(0);
+
+
+        gameData = new GameData();
+        gameData.Init();
+
+        LoadArchivements();
+
     }
 
     public static void OnFlipEvent()
     {
-        newArchivements.Enqueue(0);
+        newArchivements.Enqueue("2");
     }
 
     public static void OnMatchEvent()
     {
+        var archieve = FindArchievementByID("1");
 
+        newArchivements.Enqueue(archieve.id);
     }
 
     public static void OnMatchFailEvent()
@@ -67,8 +79,15 @@ public class ArchievementManager : MonoBehaviour
         {
             if (!archievementUI.isArise)
             {
-                archievementUI.SetNewArchivement();
-                newArchivements.Dequeue();
+                if (!PlayerPrefs.HasKey($"A{newArchivements.Peek()}"))
+                {
+                    archievementUI.SetNewArchivement(newArchivements.Peek());
+                    newArchivements.Dequeue();
+                }
+                else
+                {
+                    newArchivements.Dequeue();
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape)) 
@@ -77,4 +96,21 @@ public class ArchievementManager : MonoBehaviour
         }
     }
 
+    public void LoadArchivements()
+    {
+        TextAsset jsonText = Resources.Load<TextAsset>("Data/Archievement");
+        ArchievementList archievementList = JsonUtility.FromJson<ArchievementList>(jsonText.text);
+        archievements = archievementList.list;
+
+        Debug.Log(archievements.Count);
+        foreach (Archievement archievement in archievements) 
+        {
+            Debug.Log(archievement.id);
+        }
+    }
+
+    public static Archievement FindArchievementByID(string id)
+    {
+        return archievements.FirstOrDefault(x => x.id == id);
+    }
 }

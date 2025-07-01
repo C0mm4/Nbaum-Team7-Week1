@@ -7,19 +7,26 @@ public class ArchievementUI : MonoBehaviour
 {
     public bool isArise;
     public Animator animator;
-    public Text archivementName;
-    public Text archivementDescription;
+    public Text archievementName;
+    public Text archievementDescription;
 
     public void Awake()
     {
+        PlayerPrefs.DeleteAll();
     }
 
-    public void SetNewArchivement()
+    public void SetNewArchivement(string path)
     {
         animator.SetBool("isArise", true);
         isArise = true;
+        var archievement = ArchievementManager.FindArchievementByID(path);
 
+
+        archievementName.text = archievement.title;
+        archievementDescription.text = archievement.description;
         Invoke("EndAriseAnimation", 1.5f);
+
+        PlayerPrefs.SetInt($"A{path}", 1);
     }
 
     public void EndAriseAnimation()
