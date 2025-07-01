@@ -16,11 +16,9 @@ public class DescButton : MonoBehaviour
     [SerializeField]
     GameObject resultView;
 
-    Sprite[] sprites;
-
     private void Awake()
     {
-        sprites = Resources.LoadAll<Sprite>("Images/Portrait");
+
     }
 
     public void OnClickDesc()

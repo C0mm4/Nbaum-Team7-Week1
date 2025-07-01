@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public static GameManager Instance {  get { return instance; } }
 
+
     public bool DebugMode;
     private static bool isFirstRun = true;
     public bool isRun;

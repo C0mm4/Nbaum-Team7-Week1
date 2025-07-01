@@ -141,6 +141,12 @@ public class InGameManager : MonoBehaviour
     void EndGame()
     {
         resultPanel.SetActive(true);
+        ResultUI resultUI = resultPanel.GetComponent<ResultUI>();
+        if (resultUI != null)
+        {
+            resultUI.Init();
+        }
+
         GameManager.Instance.GameClear();
     }
 

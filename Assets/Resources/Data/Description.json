@@ -2,19 +2,23 @@
   "list": [
     {
       "id": "1",
-      "title": "댕댕이",
-      "description": "아주 귀엽다",
+      "title": "토리",
+      "description": "우리집에 살고있는 강아지. 포메라니안이라 했는데 크고보니 폼피츠(포메+스피츠)였습니다.",
       "img" : "Images/Portrait/JDS_Card_Dog"
     },
     {
       "id": "2",
-      "title": "첫 카드 매칭",
-      "description": "카드를 처음으로 매칭"
+      "title": "티츄",
+      "description": "요즘 빠진 보드게임. 진짜 재밌음. 여러분들도 한 번씩 츄라이 츄라이.",
+      "img": "Images/Portrait/JDS_Card_Tichu"
+
     },
     {
       "id": "3",
-      "title": "첫 실패",
-      "description": "게임을 처음으로 실패"
+      "title": "롯데 자이언츠",
+      "description": "올해는 진짜 다르다. 대 황 롯 데.",
+      "img": "Images/Portrait/JDS_Card_Lotte"
+
     },
     {
       "id": "4",
