@@ -15,11 +15,27 @@ public class InGameManager : MonoBehaviour
     public Card Two;
 
     List<string> cards = new List<string> 
-    { "BA_mika", "dog", "dog1", "DOYUL_BOOK", "DOYUL_Cookie",
-    "DOYUL_YISANG","duki", "KHU_Bombay", "KHU_Drumset", "KHU_Pizza",
-    "KHU_Ryzen775", "team","BA_mika", "dog", "dog1", "DOYUL_BOOK", "DOYUL_Cookie",
-    "DOYUL_YISANG","duki", "KHU_Bombay", "KHU_Drumset", "KHU_Pizza",
-    "KHU_Ryzen775", "team" };
+    { 
+        "JDS_Card_Dog", 
+        "JDS_Card_Lotte", 
+        "JDS_Card_Tichu",
+        "KDY_Card_Book", 
+        "KDY_Card_Cookie", 
+        "KDY_Card_YiSang",
+        "KHU_Card_Bombay", 
+        "KHU_Card_Pizza", 
+        "KHU_Card_Ryzen",
+        "LDH_Card_Nursing", 
+        "LDH_Card_Maltese", 
+        "LDH_Card_PUBG",
+        "SMC_Card_DuKi", 
+        "SMC_Card_Mickey", 
+        "SMC_Card_Mika"};
+
+    List<string> Maincard = new List<string>(24);
+
+    
+
 
     public int leftCards = 0;
     public int matchingPairs = 0;
@@ -32,11 +48,15 @@ public class InGameManager : MonoBehaviour
 
     void Start()
     {
+        cards = cards.OrderBy(x => Random.Range(0f, 15f)).ToList();
 
-        cards = cards.OrderBy(x => Random.Range(0f, 24f)).ToList();
+        Maincard = cards.Take(12).ToList();
+        for(int j = 0; j < 12; j++)
+        {
+            Maincard.Add(Maincard[j]);
+        }
 
-
-        for (int i = 0; i < cards.Count; i++)
+        for (int i = 0; i < Maincard.Count; i++)
         {
             GameObject go = Instantiate(card, this.transform);
 
@@ -44,18 +64,17 @@ public class InGameManager : MonoBehaviour
             float y = (i / 4) * 1.3f - 4.0f;
 
             go.transform.position = new Vector2(x, y);
-            go.GetComponent<Card>().Setting(cards[i]);    
+            go.GetComponent<Card>().Setting(Maincard[i]);    
 
         }
         //카드 총 카운트
-        matchingPairs = cards.Count;
+        matchingPairs = Maincard.Count;
 
 
     }
 
     public void Matched()
     {
-        //Debug.Log($"First : {One.Images}, Seconde : {Two.Images}");
         if (One.card == Two.card)
         {
             One.DestroyCard();
@@ -66,7 +85,7 @@ public class InGameManager : MonoBehaviour
             if (matchingPairs == 0)
             {
                 //게임종료
-                Time.timeScale = 0.0f;
+                Invoke("EndGame", 0.5f);
             }
         }
         else
@@ -86,4 +105,10 @@ public class InGameManager : MonoBehaviour
         One = null;
         Two = null;
     }
+
+    void EndGame()
+    {
+        Time.timeScale = 0.0f;
+    }
+
 }
