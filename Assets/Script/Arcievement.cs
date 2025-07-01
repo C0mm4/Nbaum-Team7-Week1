@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public class Archievement
+public class Achievement
 {
     public string id;
     public string title;
@@ -11,7 +11,7 @@ public class Archievement
 }
 
 [System.Serializable]
-public class ArchievementList
+public class AchievementList
 {
-    public List<Archievement> list;
+    public List<Achievement> list;
 }

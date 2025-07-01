@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
         resultText.text = "게임 성공!";
         ShowResultPanel();
-        ArchievementManager.OnClearEvent();
+        AchievementManager.OnClearEvent();
     }
 
     public void GameFail()
@@ -86,7 +86,7 @@ public class GameManager : MonoBehaviour
         resultText.text = "시간 초과!";
         ShowResultPanel();
 
-        ArchievementManager.OnFailEvent();
+        AchievementManager.OnFailEvent();
     }
 
     private void ShowResultPanel()
@@ -99,11 +99,11 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("매칭 확인 중...");
 
-        ArchievementManager.OnMatchEvent();
+        AchievementManager.OnMatchEvent();
         return true;
 
         // Add Fail Case
-        ArchievementManager.OnMatchFailEvent();
+        AchievementManager.OnMatchFailEvent();
         return false;
     }
 
