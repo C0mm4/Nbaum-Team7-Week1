@@ -11,10 +11,6 @@ public class AchievementUI : MonoBehaviour
     public Text achievementName;
     public Text achievementDescription;
 
-    public void Awake()
-    {
-        PlayerPrefs.DeleteAll();
-    }
 
     public void SetNewArchivement(string path)
     {

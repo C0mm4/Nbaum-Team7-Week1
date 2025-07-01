@@ -26,7 +26,7 @@ public class Card : MonoBehaviour
 
     public void FlipCard()
     {
-        if (!isFlip)
+        if (InGameManager.Instance.isCanInput && !isFlip)
         {
             Debug.Log("A");
             isFlip = true;
@@ -42,9 +42,8 @@ public class Card : MonoBehaviour
                 }
                 else
                 {
-                    Invoke("Match", 0.6f);
-
-
+                    InGameManager.Instance.Two = this;
+                    InGameManager.Instance.Matched();
                 }
             }
 
@@ -97,10 +96,5 @@ public class Card : MonoBehaviour
     {
         front.SetActive(false);
         back.SetActive(true);
-    }
-    public void Match()
-    {
-        InGameManager.Instance.Two = this;
-        InGameManager.Instance.Matched();
     }
 }

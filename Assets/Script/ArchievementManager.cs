@@ -13,7 +13,6 @@ public class AchievementManager : MonoBehaviour
     public static Queue<string> newAchivements = new Queue<string>();
     public AchievementUI achievementUI;
 
-    public int qc;
     public static GameData gameData;
 
     public GameObject achievementUIPrefs;
@@ -21,7 +20,7 @@ public class AchievementManager : MonoBehaviour
 
     private static List<Achievement> achievements;
 
-    private void Awake()
+    public void Awake()
     {
         if(instance == null)
         {
@@ -90,20 +89,21 @@ public class AchievementManager : MonoBehaviour
 
     public void Update()
     {
-        qc = newAchivements.Count;
         if(newAchivements.Count > 0)
         {
-            if (!achievementUI.isArise)
+            Debug.Log(newAchivements.Peek());
+            Debug.Log(achievementUI);
+            if(achievementUI == null)
             {
-                if (!PlayerPrefs.HasKey($"A{newAchivements.Peek()}"))
-                {
-                    achievementUI.SetNewArchivement(newAchivements.Peek());
-                    newAchivements.Dequeue();
-                }
-                else
-                {
-                    newAchivements.Dequeue();
-                }
+                CreateUI();
+            }
+            else if (!achievementUI.isArise)
+            {
+                Debug.Log("achievementUI isn't Arise");
+                Debug.Log("playerPrefs hasn't key");
+                achievementUI.SetNewArchivement(newAchivements.Peek());
+                newAchivements.Dequeue();
+                
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape)) 
