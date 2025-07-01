@@ -38,6 +38,21 @@ public class ArchievementManager : MonoBehaviour
 
     }
 
+    public void OnClickTitle()
+    {
+        gameData.titleClickCnt++;
+        if(gameData.titleClickCnt >= 5)
+        {
+            Debug.Log("a");
+            newArchivements.Enqueue("5");
+        }
+        else
+        {
+            RectTransform rect = GameObject.Find("GameTitle").GetComponent<RectTransform>();
+            rect.localScale += new Vector3(0.01f, 0.01f, 0);
+        }
+    }
+
     public static void OnFlipEvent()
     {
         newArchivements.Enqueue("2");
@@ -92,7 +107,7 @@ public class ArchievementManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Escape)) 
         {
-            action?.Invoke();
+            newArchivements.Enqueue("7");
         }
     }
 
