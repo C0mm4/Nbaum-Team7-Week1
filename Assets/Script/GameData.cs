@@ -9,6 +9,7 @@ public class GameData
 
     public static int winStreak;
     public static int loseStreak;
+    public static bool isFirstrun;
     public static int matchCombo;
     public static int missCombo;
     public static float lastMatchT;
@@ -21,6 +22,14 @@ public class GameData
         if(instance == null)
         {
             instance = this;
+        }
+        if (!PlayerPrefs.HasKey("isFirstRun"))
+        {
+            isFirstrun = true;
+        }
+        else
+        {
+            isFirstrun = false;
         }
     }
 }

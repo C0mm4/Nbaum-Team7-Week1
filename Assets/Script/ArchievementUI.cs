@@ -7,6 +7,7 @@ public class ArchievementUI : MonoBehaviour
 {
     public bool isArise;
     public Animator animator;
+    [SerializeField]
     public Text archievementName;
     public Text archievementDescription;
 
@@ -39,4 +40,5 @@ public class ArchievementUI : MonoBehaviour
     {
         isArise = false;
     }
+
 }
