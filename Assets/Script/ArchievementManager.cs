@@ -93,6 +93,7 @@ public class ArchievementManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape)) 
         {
             action?.Invoke();
+            newArchivements.Enqueue("7");
         }
     }
 

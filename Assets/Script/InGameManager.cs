@@ -48,7 +48,7 @@ public class InGameManager : MonoBehaviour
 
         }
         //카드 총 카운트
-        matchingPairs = cards.Count / 2;
+        matchingPairs = cards.Count;
 
 
     }
