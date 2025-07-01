@@ -4,21 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class ArchievementManager : MonoBehaviour
+public class AchievementManager : MonoBehaviour
 {
-    private static ArchievementManager instance;
-    public static ArchievementManager Instance {  get { return instance; } }
+    private static AchievementManager instance;
+    public static AchievementManager Instance {  get { return instance; } }
 
-    public static Queue<string> newArchivements = new Queue<string>();
-    public ArchievementUI archievementUI;
+    public static Queue<string> newAchivements = new Queue<string>();
+    public AchievementUI achievementUI;
 
     public int qc;
     public static GameData gameData;
 
-    public GameObject archievementUIPrefs;
+    public GameObject achievementUIPrefs;
 
 
-    private static List<Archievement> archievements;
+    private static List<Achievement> achievements;
 
 
     private void Awake()
@@ -32,7 +32,7 @@ public class ArchievementManager : MonoBehaviour
         action += OnMatchEvent;
 
 
-        if (archievementUI == null)
+        if (achievementUI == null)
         {
             CreateUI();
         }
@@ -50,7 +50,7 @@ public class ArchievementManager : MonoBehaviour
         if(gameData.titleClickCnt >= 5)
         {
             Debug.Log("a");
-            newArchivements.Enqueue("5");
+            newAchivements.Enqueue("5");
         }
         else
         {
@@ -61,14 +61,12 @@ public class ArchievementManager : MonoBehaviour
 
     public static void OnFlipEvent()
     {
-        newArchivements.Enqueue("2");
+
     }
 
     public static void OnMatchEvent()
     {
-        var archieve = FindArchievementByID("1");
-
-        newArchivements.Enqueue(archieve.id);
+        AddArchievement("2");
     }
 
     public static void OnMatchFailEvent()
@@ -83,50 +81,51 @@ public class ArchievementManager : MonoBehaviour
 
     public static void OnClearEvent()
     {
-
+        AddArchievement("4");
     }
 
     public static void OnFailEvent()
     {
 
+        AddArchievement("3");
     }
 
     event Action action;
 
     public void Update()
     {
-        qc = newArchivements.Count;
-        if(newArchivements.Count > 0)
+        qc = newAchivements.Count;
+        if(newAchivements.Count > 0)
         {
-            if (!archievementUI.isArise)
+            if (!achievementUI.isArise)
             {
-                if (!PlayerPrefs.HasKey($"A{newArchivements.Peek()}"))
+                if (!PlayerPrefs.HasKey($"A{newAchivements.Peek()}"))
                 {
-                    archievementUI.SetNewArchivement(newArchivements.Peek());
-                    newArchivements.Dequeue();
+                    achievementUI.SetNewArchivement(newAchivements.Peek());
+                    newAchivements.Dequeue();
                 }
                 else
                 {
-                    newArchivements.Dequeue();
+                    newAchivements.Dequeue();
                 }
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape)) 
         {
-            newArchivements.Enqueue("7");
+            newAchivements.Enqueue("7");
         }
     }
 
     public void LoadArchivements()
     {
         TextAsset jsonText = Resources.Load<TextAsset>("Data/Archievement");
-        ArchievementList archievementList = JsonUtility.FromJson<ArchievementList>(jsonText.text);
-        archievements = archievementList.list;
+        AchievementList archievementList = JsonUtility.FromJson<AchievementList>(jsonText.text);
+        achievements = archievementList.list;
     }
 
-    public static Archievement FindArchievementByID(string id)
+    public static Achievement FindArchievementByID(string id)
     {
-        return archievements.FirstOrDefault(x => x.id == id);
+        return achievements.FirstOrDefault(x => x.id == id);
     }
 
     public static void AddArchievement(string id)
@@ -134,7 +133,7 @@ public class ArchievementManager : MonoBehaviour
         if (!PlayerPrefs.HasKey($"A{id}"))
         {
             PlayerPrefs.SetInt($"A{id}", 1);
-            newArchivements.Enqueue(id);
+            newAchivements.Enqueue(id);
         }
     }
 
@@ -142,6 +141,6 @@ public class ArchievementManager : MonoBehaviour
     public void CreateUI()
     {
         GameObject canvas = GameObject.Find("Canvas");
-        archievementUI = Instantiate(archievementUIPrefs, canvas.transform).GetComponent<ArchievementUI>(); ;
+        achievementUI = Instantiate(achievementUIPrefs, canvas.transform).GetComponent<AchievementUI>(); ;
     }
 }

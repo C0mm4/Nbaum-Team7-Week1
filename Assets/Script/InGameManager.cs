@@ -14,12 +14,23 @@ public class InGameManager : MonoBehaviour
     public Card One;
     public Card Two;
 
-    List<string> cards = new List<string> 
-    { "BA_mika", "dog", "dog1", "DOYUL_BOOK", "DOYUL_Cookie",
-    "DOYUL_YISANG","duki", "KHU_Bombay", "KHU_Drumset", "KHU_Pizza",
-    "KHU_Ryzen775", "team","BA_mika", "dog", "dog1", "DOYUL_BOOK", "DOYUL_Cookie",
-    "DOYUL_YISANG","duki", "KHU_Bombay", "KHU_Drumset", "KHU_Pizza",
-    "KHU_Ryzen775", "team" };
+    List<string> cards = new List<string>
+    {
+    "KHU_Card_Bombay",
+    "KHU_Card_Pizza",
+    "KHU_Card_Ryzen",
+    "KDY_Card_Book",
+    "KDY_Card_Cookie",
+    "KDY_Card_YiSang",
+    "SMC_Card_DuKi",
+    "SMC_Card_Mika",
+    "SMC_Card_Mickey",
+    "JDS_Card_Dog",
+    "JDS_Card_Tichu",
+    "JDS_Card_Lotte",
+    "LDH_Card_Maltese",
+    "LDH_Card_Nursing",
+    "LDH_Card_PUBG",};
 
     public int leftCards = 0;
     public int matchingPairs = 0;
@@ -32,10 +43,10 @@ public class InGameManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("isFirstRun"))
         {
             PlayerPrefs.SetInt("isFirstRun", 1);
-            ArchievementManager.AddArchievement("1");
+            AchievementManager.AddArchievement("1");
         }
 
-        ArchievementManager.Instance.CreateUI();
+//        ArchievementManager.Instance.CreateUI();
     }
 
     void Start()
