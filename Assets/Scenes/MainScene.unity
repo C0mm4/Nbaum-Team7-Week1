@@ -785,8 +785,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 4925048888181981110, guid: db91dff14789766409630a0dabf483ce, type: 3}
+  resultPanel: {fileID: 2006255877}
   One: {fileID: 0}
   Two: {fileID: 0}
+  leftT: 0
   leftCards: 0
   matchingPairs: 0
 --- !u!4 &733743594

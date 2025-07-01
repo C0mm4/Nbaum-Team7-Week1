@@ -133,6 +133,7 @@ public class InGameManager : MonoBehaviour
 
     void EndGame()
     {
+        resultPanel.SetActive(true);
         GameManager.Instance.GameClear();
     }
 
