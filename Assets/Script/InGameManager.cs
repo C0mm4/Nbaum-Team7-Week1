@@ -17,7 +17,8 @@ public class InGameManager : MonoBehaviour
     public Card Two;
 
     public float leftT;
-    
+
+    public bool isCanInput;
 
     List<string> cards = new List<string> 
     { 
@@ -47,7 +48,7 @@ public class InGameManager : MonoBehaviour
     {
         if(Instance == null)
             Instance = this;
-
+        isCanInput = true;
     }
 
     void Start()
@@ -105,6 +106,7 @@ public class InGameManager : MonoBehaviour
 
     public void Matched()
     {
+        isCanInput = false;
         if (One.card == Two.card)
         {
 
@@ -118,11 +120,13 @@ public class InGameManager : MonoBehaviour
                 Invoke("EndGame", 0.5f);
             }
             AchievementManager.AddArchievement("2");
+            isCanInput = true;
         }
         else
         {
             One.CloseCard();
             Two.CloseCard();
+            Invoke("FailEvent", 0.7f);
         }
 
         card_reset();
@@ -140,6 +144,9 @@ public class InGameManager : MonoBehaviour
         GameManager.Instance.GameClear();
     }
 
-  
+    void FailEvent()
+    {
+        isCanInput = true;
+    }
 
 }
