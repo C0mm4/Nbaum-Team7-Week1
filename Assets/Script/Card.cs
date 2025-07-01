@@ -64,14 +64,13 @@ public class Card : MonoBehaviour
 
     public void CloseCard()
     {
-        Invoke("CloseCardHandler", 0.3f);
+        Invoke("CloseCardHandler", 0.5f);
     }
 
     void CloseCardHandler()
     {
+        Debug.Log("T");
         anim.SetBool("isOpen", false);
-        front.SetActive(false);
-        back.SetActive(true);
 
         isFlip = false;
     }
@@ -89,10 +88,15 @@ public class Card : MonoBehaviour
         
     }
 
-    public void Flip()
+    public void Open()
     {
-
         front.SetActive(true);
         back.SetActive(false);
+    }
+
+    public void Close()
+    {
+        front.SetActive(false);
+        back.SetActive(true);
     }
 }
