@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using UnityEngine;
 
 public class AchievementManager : MonoBehaviour
@@ -116,6 +117,7 @@ public class AchievementManager : MonoBehaviour
         TextAsset jsonText = Resources.Load<TextAsset>("Data/Archievement");
         AchievementList archievementList = JsonUtility.FromJson<AchievementList>(jsonText.text);
         achievements = archievementList.list;
+
     }
 
     public static Achievement FindArchievementByID(string id)

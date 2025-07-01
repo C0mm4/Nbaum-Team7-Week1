@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class Card : MonoBehaviour
 {
@@ -27,6 +28,7 @@ public class Card : MonoBehaviour
     {
         if (!isFlip)
         {
+            Debug.Log("A");
             isFlip = true;
             anim.SetBool("isOpen", true);
             Invoke("OpenCardHanlder", 0.5f);
@@ -71,6 +73,7 @@ public class Card : MonoBehaviour
         front.SetActive(false);
         back.SetActive(true);
 
+        isFlip = false;
     }
 
     void OpenCardHanlder()
@@ -84,5 +87,12 @@ public class Card : MonoBehaviour
         card = image;
         Images.sprite = Resources.Load<Sprite>("Images/Portrait/"+image);
         
+    }
+
+    public void Flip()
+    {
+
+        front.SetActive(true);
+        back.SetActive(false);
     }
 }

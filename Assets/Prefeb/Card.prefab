@@ -107,7 +107,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5678646709156071016}
   - component: {fileID: 6843290876055581425}
-  - component: {fileID: 2328109728396045351}
   m_Layer: 0
   m_Name: back
   m_TagString: Untagged
@@ -183,27 +182,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &2328109728396045351
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4310143687632285949}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 413ef1a333abac245a194b524eb6292d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4925048888181981110
 GameObject:
   m_ObjectHideFlags: 0
@@ -214,6 +192,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2348932728969597861}
   - component: {fileID: 2421872489961032440}
+  - component: {fileID: 2295956448723826099}
   m_Layer: 0
   m_Name: Card
   m_TagString: Untagged
@@ -253,9 +232,30 @@ MonoBehaviour:
   front: {fileID: 338495378934031716}
   back: {fileID: 4310143687632285949}
   Images: {fileID: 2534523385078058974}
-  anim: {fileID: 2328109728396045351}
+  anim: {fileID: 2295956448723826099}
   card: 
   isFlip: 0
+--- !u!95 &2295956448723826099
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4925048888181981110}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 413ef1a333abac245a194b524eb6292d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6618800019358858649
 GameObject:
   m_ObjectHideFlags: 0
@@ -282,14 +282,14 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6618800019358858649}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -1, z: 0, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.01, y: 0.01, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4804479106953398329}
   m_Father: {fileID: 5678646709156071016}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -180, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

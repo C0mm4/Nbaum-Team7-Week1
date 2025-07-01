@@ -54,7 +54,7 @@ public class InGameManager : MonoBehaviour
             AchievementManager.AddArchievement("1");
         }
 
-        //AchievementManager.Instance.CreateUI();
+        AchievementManager.Instance.CreateUI();
     }
 
     void Start()
@@ -126,8 +126,6 @@ public class InGameManager : MonoBehaviour
 
     void card_reset()
     {
-        One.isFlip = false;
-        Two.isFlip = false;
         One = null;
         Two = null;
     }
