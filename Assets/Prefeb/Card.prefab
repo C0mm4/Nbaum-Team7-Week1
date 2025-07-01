@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1298615390278244040}
   - component: {fileID: 2598348632202830455}
-  - component: {fileID: 892472961853597528}
+  - component: {fileID: 2534523385078058974}
   m_Layer: 0
   m_Name: front
   m_TagString: Untagged
@@ -45,7 +45,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 338495378934031716}
   m_CullTransparentMesh: 1
---- !u!212 &892472961853597528
+--- !u!212 &2534523385078058974
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -310,7 +310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   front: {fileID: 338495378934031716}
   back: {fileID: 4310143687632285949}
-  Image: {fileID: 0}
+  Images: {fileID: 2534523385078058974}
   anim: {fileID: 5130942650067680991}
   cardData: 0
   isFlip: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class InGameManager : MonoBehaviour
 {
@@ -11,15 +12,20 @@ public class InGameManager : MonoBehaviour
     public GameObject card;
 
     List<string> cards = new List<string> 
-    { "BA_mika.png", "dog.jpg", "dog1.jpg", "DOYUL_BOOK.jpg", "DOYUL_Cookie.jpg",
-    "DOYUL_YISANG.png","duki.jpg", "KHU_Bombay.png", "KHU_Drumset.png", "KHU_Pizza.png",
-    "KHU_Ryzen775.png", "team.png","BA_mika.png", "dog.jpg", "dog1.jpg", "DOYUL_BOOK.jpg", "DOYUL_Cookie.jpg",
-    "DOYUL_YISANG.png","duki.jpg", "KHU_Bombay.png", "KHU_Drumset.png", "KHU_Pizza.png",
-    "KHU_Ryzen775.png", "team.png" };
+    { "BA_mika", "dog", "dog1", "DOYUL_BOOK", "DOYUL_Cookie",
+    "DOYUL_YISANG","duki", "KHU_Bombay", "KHU_Drumset", "KHU_Pizza",
+    "KHU_Ryzen775", "team","BA_mika", "dog", "dog1", "DOYUL_BOOK", "DOYUL_Cookie",
+    "DOYUL_YISANG","duki", "KHU_Bombay", "KHU_Drumset", "KHU_Pizza",
+    "KHU_Ryzen775", "team" };
 
-    public string leftCards = null;
+    public int leftCards = 0;
     public int matchingPairs = 0;
-    
+
+    private void Awake()
+    {
+        if(Instance == null)
+            Instance = this;
+    }
 
     void Start()
     {
@@ -39,7 +45,7 @@ public class InGameManager : MonoBehaviour
 
         }
 
-        //GameManager.Instance.cardCount = arr.Length;
+        
     }
 
 

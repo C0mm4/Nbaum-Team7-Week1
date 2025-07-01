@@ -11,7 +11,8 @@ public class Card : MonoBehaviour
     public GameObject front;
     public GameObject back;
 
-    public Image Image;
+    //public Image Images;
+    public SpriteRenderer Images;
 
     public Animator anim;
 
@@ -19,12 +20,10 @@ public class Card : MonoBehaviour
 
     public bool isFlip = false;
 
-    string a;
-
     // Start is called before the first frame update
     void Start()
     {
-        
+        Images = GetComponent<SpriteRenderer>();
     }
 
     public void FlipCard()
@@ -36,20 +35,8 @@ public class Card : MonoBehaviour
             front.SetActive(true);
             back.SetActive(false);
             
-            /*
-            if (InGameManager.Instance.leftCards == null)
-            {
-                InGameManager.Instance.leftCards = cardData;
-            }
-            else
-            {
-                if (InGameManager.Instance.leftCards == cardData)
-                {
-                    InGameManager.Instance.matchingPairs++;
-                }
-            }
-            */
-            //if()
+           // if(InGameManager.Instance.card)
+
         }
     }
 
@@ -78,12 +65,8 @@ public class Card : MonoBehaviour
 
     public void Setting(string image)
     {
-        Debug.Log(a);
-        Image = GetComponent<Image>();
-        front.GetComponent<SpriteRenderer> = 
-        front.GetComponent<Image>() = Resources.Load(image);
-       // Image = Resources.Load<Image>(image);
-        cardData = image;
+        //Debug.Log($"In = {image}");
+        Images.sprite = Resources.Load<Sprite>(image);
 
     }
 }
