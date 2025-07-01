@@ -6,24 +6,21 @@ using UnityEngine.UI;
 
 public class Card : MonoBehaviour
 {
-    //public SpriteRenderer Image;
-
     public GameObject front;
     public GameObject back;
 
-    //public Image Images;
     public SpriteRenderer Images;
 
     public Animator anim;
 
-    public string cardData = null;
+    public string card = null;
 
     public bool isFlip = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        Images = GetComponent<SpriteRenderer>();
+        
     }
 
     public void FlipCard()
@@ -31,11 +28,25 @@ public class Card : MonoBehaviour
         if (!isFlip)
         {
             isFlip = true;
-            anim.SetBool("isArise", true);
+            //anim.SetBool("isArise", true);
             front.SetActive(true);
             back.SetActive(false);
-            
-           // if(InGameManager.Instance.card)
+           
+
+            if (InGameManager.Instance.leftCards < 2)
+            {
+                InGameManager.Instance.leftCards++;
+                if (InGameManager.Instance.One == null)
+                {   
+                    InGameManager.Instance.One = this;
+                }
+                else
+                {
+                    InGameManager.Instance.Two = this;
+                    InGameManager.Instance.Matched();
+
+                }
+            }
 
         }
     }
@@ -57,7 +68,7 @@ public class Card : MonoBehaviour
 
     void CloseCardHandler()
     {
-        anim.SetBool("isArise", false);
+        //anim.SetBool("isArise", false);
         front.SetActive(false);
         back.SetActive(true);
 
@@ -65,8 +76,8 @@ public class Card : MonoBehaviour
 
     public void Setting(string image)
     {
-        //Debug.Log($"In = {image}");
+        card = image;
         Images.sprite = Resources.Load<Sprite>(image);
-
+        
     }
 }
