@@ -25,11 +25,6 @@ public class DescButton : MonoBehaviour
 
     public void OnClickDesc()
     {
-        int imageIdx = Random.Range(0,sprites.Length);
-        imageMain.sprite = sprites[imageIdx];
-        titleText.text = "Title Text Sample";
-        descText.text = "This is description text sample";
-
         resultView.SetActive(false);
         descView.SetActive(true);
     }
