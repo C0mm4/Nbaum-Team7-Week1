@@ -29,10 +29,12 @@ public class ArchievementManager : MonoBehaviour
         action += OnMatchEvent;
 
 
+
         gameData = new GameData();
         gameData.Init();
 
         LoadArchivements();
+
 
 
 
