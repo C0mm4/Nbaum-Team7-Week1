@@ -18,6 +18,7 @@ public class ArchievementManager : MonoBehaviour
     
     private static List<Archievement> archievements;
 
+
     private void Awake()
     {
         if(instance == null)
@@ -33,10 +34,6 @@ public class ArchievementManager : MonoBehaviour
         gameData.Init();
 
         LoadArchivements();
-
-
-
-
     }
 
     public static void OnFlipEvent()
@@ -80,8 +77,15 @@ public class ArchievementManager : MonoBehaviour
         {
             if (!archievementUI.isArise)
             {
-                archievementUI.SetNewArchivement(newArchivements.Peek());
-                newArchivements.Dequeue();
+                if (!PlayerPrefs.HasKey($"A{newArchivements.Peek()}"))
+                {
+                    archievementUI.SetNewArchivement(newArchivements.Peek());
+                    newArchivements.Dequeue();
+                }
+                else
+                {
+                    newArchivements.Dequeue();
+                }
             }
         }
         if (Input.GetKeyDown(KeyCode.Escape)) 
