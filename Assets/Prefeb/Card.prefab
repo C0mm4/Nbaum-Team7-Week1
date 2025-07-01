@@ -312,7 +312,7 @@ MonoBehaviour:
   back: {fileID: 4310143687632285949}
   Images: {fileID: 2534523385078058974}
   anim: {fileID: 5130942650067680991}
-  cardData: 0
+  card: 
   isFlip: 0
 --- !u!95 &5130942650067680991
 Animator:
