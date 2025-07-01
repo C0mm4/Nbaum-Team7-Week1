@@ -785,8 +785,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   card: {fileID: 4925048888181981110, guid: db91dff14789766409630a0dabf483ce, type: 3}
+  resultPanel: {fileID: 2006255877}
   One: {fileID: 0}
   Two: {fileID: 0}
+  leftT: 0
   leftCards: 0
   matchingPairs: 0
 --- !u!4 &733743594
@@ -1980,6 +1982,7 @@ GameObject:
   - component: {fileID: 2006255880}
   - component: {fileID: 2006255879}
   - component: {fileID: 2006255878}
+  - component: {fileID: 2006255882}
   m_Layer: 5
   m_Name: ResultUI
   m_TagString: Untagged
@@ -2074,6 +2077,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 760, y: 1280}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2006255882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2006255877}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c10e3bbc84d3c8c439dec2bfcc4823a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2020374179
 GameObject:
   m_ObjectHideFlags: 0

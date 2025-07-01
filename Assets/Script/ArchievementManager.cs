@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Xml.Linq;
 using UnityEngine;
 
 public class AchievementManager : MonoBehaviour
@@ -20,7 +21,6 @@ public class AchievementManager : MonoBehaviour
 
     private static List<Achievement> achievements;
 
-
     private void Awake()
     {
         if(instance == null)
@@ -29,7 +29,6 @@ public class AchievementManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-        action += OnMatchEvent;
 
 
         if (achievementUI == null)
@@ -49,7 +48,6 @@ public class AchievementManager : MonoBehaviour
         gameData.titleClickCnt++;
         if(gameData.titleClickCnt >= 5)
         {
-            Debug.Log("a");
             newAchivements.Enqueue("5");
         }
         else
@@ -90,8 +88,6 @@ public class AchievementManager : MonoBehaviour
         AddArchievement("3");
     }
 
-    event Action action;
-
     public void Update()
     {
         qc = newAchivements.Count;
@@ -121,6 +117,7 @@ public class AchievementManager : MonoBehaviour
         TextAsset jsonText = Resources.Load<TextAsset>("Data/Archievement");
         AchievementList archievementList = JsonUtility.FromJson<AchievementList>(jsonText.text);
         achievements = archievementList.list;
+
     }
 
     public static Achievement FindArchievementByID(string id)

@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
 
 public class Card : MonoBehaviour
 {
@@ -27,24 +28,22 @@ public class Card : MonoBehaviour
     {
         if (!isFlip)
         {
+            Debug.Log("A");
             isFlip = true;
             anim.SetBool("isOpen", true);
-            front.SetActive(true);
-            back.SetActive(false);
+            Invoke("OpenCardHanlder", 0.5f);
            
 
-            if (InGameManager.Instance.leftCards < 2)
+            if (InGameManager.Instance.leftCards > 0)
             {
-                InGameManager.Instance.leftCards++;
                 if (InGameManager.Instance.One == null)
                 {   
                     InGameManager.Instance.One = this;
                 }
                 else
                 {
-                    InGameManager.Instance.Two = this;
-                    InGameManager.Instance.Matched();
-                    
+                    Invoke("Match", 0.6f);
+
 
                 }
             }
@@ -73,6 +72,13 @@ public class Card : MonoBehaviour
         front.SetActive(false);
         back.SetActive(true);
 
+        isFlip = false;
+    }
+
+    void OpenCardHanlder()
+    {
+        front.SetActive(true);
+        back.SetActive(false);
     }
 
     public void Setting(string image)
@@ -80,5 +86,18 @@ public class Card : MonoBehaviour
         card = image;
         Images.sprite = Resources.Load<Sprite>("Images/Portrait/"+image);
         
+    }
+
+    public void Flip()
+    {
+
+        front.SetActive(true);
+        back.SetActive(false);
+    }
+
+    public void Match()
+    {
+        InGameManager.Instance.Two = this;
+        InGameManager.Instance.Matched();
     }
 }
