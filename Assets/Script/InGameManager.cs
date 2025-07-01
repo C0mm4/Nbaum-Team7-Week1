@@ -67,6 +67,8 @@ public class InGameManager : MonoBehaviour
             Maincard.Add(Maincard[j]);
         }
 
+        Maincard = Maincard.OrderBy(x => Random.Range(0f, 24f)).ToList();
+
         for (int i = 0; i < Maincard.Count; i++)
         {
             GameObject go = Instantiate(card, this.transform);
