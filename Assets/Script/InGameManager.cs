@@ -56,7 +56,7 @@ public class InGameManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("isFirstRun"))
         {
             PlayerPrefs.SetInt("isFirstRun", 1);
-            AchievementManager.AddArchievement("1");
+            AchievementManager.AddAchievement("1");
         }
 
         AchievementManager.Instance.CreateUI();
@@ -119,7 +119,7 @@ public class InGameManager : MonoBehaviour
                 //End Game
                 Invoke("EndGame", 0.5f);
             }
-            AchievementManager.AddArchievement("2");
+            AchievementManager.AddAchievement("2");
             isCanInput = true;
         }
         else

@@ -42,7 +42,7 @@ public class GameManager : MonoBehaviour
             GameData.titleTime += Time.deltaTime;
             if (GameData.titleTime >= 60f)
             {
-                AchievementManager.AddArchievement("6");
+                AchievementManager.AddAchievement("6");
             }
         }
     }
@@ -55,13 +55,13 @@ public class GameManager : MonoBehaviour
     public void GameClear()
     {
         state = gameState.Result;
-        AchievementManager.AddArchievement("4");
+        AchievementManager.AddAchievement("4");
     }
 
     public void GameFail()
     {
         state = gameState.Result;
-        AchievementManager.AddArchievement("3");
+        AchievementManager.AddAchievement("3");
     }
 
 

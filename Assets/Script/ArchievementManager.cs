@@ -38,7 +38,7 @@ public class AchievementManager : MonoBehaviour
         gameData = new GameData();
         gameData.Init();
 
-        LoadArchivements();
+        LoadAchivements();
 
     }
 
@@ -63,7 +63,7 @@ public class AchievementManager : MonoBehaviour
 
     public static void OnMatchEvent()
     {
-        AddArchievement("2");
+        AddAchievement("2");
     }
 
     public static void OnMatchFailEvent()
@@ -78,13 +78,13 @@ public class AchievementManager : MonoBehaviour
 
     public static void OnClearEvent()
     {
-        AddArchievement("4");
+        AddAchievement("4");
     }
 
     public static void OnFailEvent()
     {
 
-        AddArchievement("3");
+        AddAchievement("3");
     }
 
     public void Update()
@@ -99,8 +99,6 @@ public class AchievementManager : MonoBehaviour
             }
             else if (!achievementUI.isArise)
             {
-                Debug.Log("achievementUI isn't Arise");
-                Debug.Log("playerPrefs hasn't key");
                 achievementUI.SetNewArchivement(newAchivements.Peek());
                 newAchivements.Dequeue();
                 
@@ -112,7 +110,7 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
-    public void LoadArchivements()
+    public void LoadAchivements()
     {
         TextAsset jsonText = Resources.Load<TextAsset>("Data/Archievement");
         AchievementList archievementList = JsonUtility.FromJson<AchievementList>(jsonText.text);
@@ -120,12 +118,12 @@ public class AchievementManager : MonoBehaviour
 
     }
 
-    public static Achievement FindArchievementByID(string id)
+    public static Achievement FindAchievementByID(string id)
     {
         return achievements.FirstOrDefault(x => x.id == id);
     }
 
-    public static void AddArchievement(string id)
+    public static void AddAchievement(string id)
     {
         if (!PlayerPrefs.HasKey($"A{id}"))
         {

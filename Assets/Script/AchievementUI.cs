@@ -16,7 +16,7 @@ public class AchievementUI : MonoBehaviour
     {
         animator.SetBool("isArise", true);
         isArise = true;
-        var archievement = AchievementManager.FindArchievementByID(path);
+        var archievement = AchievementManager.FindAchievementByID(path);
 
 
         achievementName.text = archievement.title;
