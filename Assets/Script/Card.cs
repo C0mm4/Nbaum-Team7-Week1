@@ -42,9 +42,8 @@ public class Card : MonoBehaviour
                 }
                 else
                 {
-                    InGameManager.Instance.Two = this;
-                    InGameManager.Instance.Matched();
-                    
+                    Invoke("Match", 0.6f);
+
 
                 }
             }
@@ -98,5 +97,9 @@ public class Card : MonoBehaviour
     {
         front.SetActive(false);
         back.SetActive(true);
+    public void Match()
+    {
+        InGameManager.Instance.Two = this;
+        InGameManager.Instance.Matched();
     }
 }
