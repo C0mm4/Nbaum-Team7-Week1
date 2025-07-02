@@ -61,4 +61,9 @@ public class ResourceManager : MonoBehaviour
 
         return desc;
     }
+
+    public List<Description> GetDescriptions()
+    {
+        return descriptions;
+    }
 }
