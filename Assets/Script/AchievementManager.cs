@@ -56,6 +56,15 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
+    public static void OnStartEvent()
+    {
+        AddAchievement("1");
+        if(GameManager.stageLevel == 3)
+        {
+            AddAchievement("8");
+        }
+    }
+
     public static void OnFlipEvent()
     {
 
@@ -79,6 +88,16 @@ public class AchievementManager : MonoBehaviour
     public static void OnClearEvent()
     {
         AddAchievement("4");
+        if (GameManager.stageLevel == 3)
+        {
+            AddAchievement("9");
+            GameData.hiddenClearCnt++;
+            if (GameData.hiddenClearCnt >= 5)
+            {
+                AddAchievement("10");
+            }
+        }
+        GameData.clearCnt++;
     }
 
     public static void OnFailEvent()
@@ -105,10 +124,17 @@ public class AchievementManager : MonoBehaviour
             }
         }
         if(GameManager.state == GameManager.gameState.Title)
-            if (Input.GetKeyDown(KeyCode.Escape)) 
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                newAchievements.Enqueue("7");
+                AddAchievement("7");
             }
+            GameData.titleTime += Time.deltaTime;
+            if(GameData.titleTime >= 300f)
+            {
+                AddAchievement("6");
+            }
+        }
     }
 
     public void LoadAchivements()
