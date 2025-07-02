@@ -110,8 +110,9 @@ public class InGameManager : MonoBehaviour
         if (One.card == Two.card)
         {
 
-            One.DestroyCard();
-            Two.DestroyCard();
+            One.EffectOn();
+            Two.EffectOn();
+
             leftCards -= 2;
             if (leftCards == 0)
             {

@@ -9,10 +9,12 @@ public class Card : MonoBehaviour
 {
     public GameObject front;
     public GameObject back;
+    public GameObject Effect;
 
     public SpriteRenderer Images;
 
     public Animator anim;
+    public Animator effect_anim;
 
     public string card = null;
 
@@ -96,5 +98,20 @@ public class Card : MonoBehaviour
     {
         front.SetActive(false);
         back.SetActive(true);
+    }
+    public void EffectOn()
+    {
+        StartCoroutine(PlayEffectThenDestroy());
+    }
+
+    private IEnumerator PlayEffectThenDestroy()
+    {
+        Effect.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        effect_anim.SetBool("EndOn", true);
+        yield return new WaitForSeconds(0.2f);
+        Images.enabled = false;
+        yield return new WaitForSeconds(0.3f);
+        Destroy(gameObject);
     }
 }
