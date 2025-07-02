@@ -47,7 +47,7 @@ public class AchievementManager : MonoBehaviour
         gameData.titleClickCnt++;
         if(gameData.titleClickCnt >= 5)
         {
-            newAchievements.Enqueue("5");
+            AddAchievement("5");
         }
         else
         {

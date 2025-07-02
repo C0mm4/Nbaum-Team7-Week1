@@ -22,56 +22,36 @@
     },
     {
       "id": "4",
-      "title": "첫 성공",
-      "description": "게임을 처음으로 성공"
-    },
-    {
-      "id": "5",
-      "title": "굳이 왜 이런 짓을",
-      "description": "타이틀 로고를 5회 클릭"
-    },
-    {
-      "id": "6",
-      "title": "왜 아직 여기 계세요",
-      "description": "타이틀 화면에서 5분 대기"
-    },
-    {
-      "id": "7",
-      "title": "내리시는 문은 이쪽입니다",
-      "description": "타이틀 화면에서 ESC누르기"
-    },
-    {
-      "id": "8",
       "title": "두키",
       "description": "작은누님네 강아지. 한마리가 더 있다 애들이 순해서 사람들이 오면 바로 달려듦",
       "img": "Images/Portrait/SMC_Card_DuKi"
     },
     {
-      "id": "9",
+      "id": "5",
       "title": "미키마우스",
       "description": "저작권이 풀린 '그놈'이다 이것을 주제로 수상한 공포게임들이 많이 나왔다는 소문이...",
       "img": "Images/Portrait/SMC_Card_Mickey"
     },
     {
-      "id": "10",
+      "id": "6",
       "title": "미소노 미카",
       "description": "블루아카이브 미소노 미카 오픈 유저로서 가장 최애캐이다",
       "img": "Images/Portrait/SMC_Card_Mika"
     },
     {
-      "id": "11",
+      "id": "7",
       "title": "봄베이 사파이어",
       "description" : "봄베이 맛있습니다. 한 잔 하실?",
       "img" : "Images/Portrait/KHU_Bombay"
     },
     {
-      "id": "12",
+      "id": "8",
       "title": "핏쨔",
       "description" : "신선한 모짜렐라와 신선한 바질, 그리고 신선한 토마토 소스로 만든 마르게리따는 매우 맛있습니다. 아 배고프다 피자 먹으러 가야지",
       "img" : "Images/Portrait/KHU_Bombay"
     },
     {
-      "id": "13",
+      "id": "9",
       "title": "Ryzen? 1700",
       "description" : "잘 보면 매우 수상한 Ryzen CPU입니다. 뭐가 이상할까요?",
       "img" : "Images/Portrait/KHU_Bombay"
