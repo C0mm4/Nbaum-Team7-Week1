@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,15 +11,19 @@ public class InGameManager : MonoBehaviour
     public static InGameManager Instance;
 
     public GameObject card;
-
+    
     public GameObject resultPanel;
 
     public Card One;
     public Card Two;
 
+    public Text Timmer;
+
     public float leftT;
 
     public bool isCanInput;
+
+
 
     //hidden bool
     public bool what_hid = false;
@@ -83,10 +88,12 @@ public class InGameManager : MonoBehaviour
         if(GameManager.state == GameManager.gameState.InPlay)
         {
             leftT -= Time.deltaTime;
+            Timmer.text = leftT.ToString("N2");
         }
 
         if(leftT < 0f)
         {
+            Timmer.text = "0.00";
             GameManager.state = GameManager.gameState.Result;
             EndGame();
         }
