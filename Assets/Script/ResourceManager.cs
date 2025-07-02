@@ -6,6 +6,9 @@ public class ResourceManager : MonoBehaviour
 {
     private static ResourceManager instance;
     public static ResourceManager Instance { get { return instance; } }
+
+    public JsonLoader jsonLoader = new JsonLoader();
+
     Dictionary<string, Sprite> portraits = new Dictionary<string, Sprite>();
     public List<Description> descriptions = new();
 
@@ -33,7 +36,7 @@ public class ResourceManager : MonoBehaviour
 
     public void LoadDescription()
     {
-        TextAsset jsonText = Resources.Load<TextAsset>("Data/Description");
+        TextAsset jsonText = jsonLoader.LoadJsonData("Data/Description");
         var descriptionList = JsonUtility.FromJson<DescriptionList>(jsonText.text);
 
         descriptions = descriptionList.list;

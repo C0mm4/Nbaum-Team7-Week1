@@ -2,17 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class JsonLoader : MonoBehaviour
+public class JsonLoader
 {
-    // Start is called before the first frame update
-    void Start()
+    public TextAsset LoadJsonData(string path)
     {
-        
-    }
+        try
+        {
+            TextAsset jsonText = Resources.Load<TextAsset>(path);
+            return jsonText;
+        }
+        catch 
+        {
+            Debug.LogError($"failed load Json data in {path} file");
+            return null;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
