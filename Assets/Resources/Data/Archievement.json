@@ -2,37 +2,37 @@
   "list": [
     {
       "id": "1",
-      "title": "새로운 시작",
+      "title": "[새로운 시작]",
       "description": "게임을 처음 시작"
     },
     {
       "id": "2",
-      "title": "첫 카드 매칭",
+      "title": "[첫 카드 매칭]",
       "description": "카드를 처음으로 매칭"
     },
     {
       "id": "3",
-      "title": "첫 실패",
+      "title": "[첫 실패]",
       "description": "게임을 처음으로 실패"
     },
     {
       "id": "4",
-      "title": "첫 성공",
+      "title": "[첫 성공]",
       "description": "게임을 처음으로 성공"
     },
     {
       "id": "5",
-      "title": "굳이 왜 이런 짓을",
+      "title": "[굳이 왜 이런 짓을]",
       "description": "타이틀 로고를 5회 클릭"
     },
     {
       "id": "6",
-      "title": "왜 아직 여기 계세요",
+      "title": "[왜 아직 여기 계세요]",
       "description": "타이틀 화면에서 5분 대기"
     },
     {
       "id": "7",
-      "title": "내리시는 문은 이쪽입니다",
+      "title": "[내리시는 문은 이쪽입니다]",
       "description": "타이틀 화면에서 ESC누르기"
     }
 

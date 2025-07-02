@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
 
     public enum gameState
     {
-        Title, InPlay, Pause, Result
+        Title, InPlay, Pause, Result, Menu,
     }
     public static gameState state;
 
@@ -75,5 +75,11 @@ public class GameManager : MonoBehaviour
 #else
         Application.Quit();
 #endif
+    }
+
+    public void OnClickAchievementListUI()
+    {
+        GameObject go = GameObject.Find("Canvas").transform.Find("AchievementListUI").gameObject;
+        go.SetActive(true);
     }
 }

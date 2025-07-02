@@ -10,7 +10,7 @@ public class AchievementManager : MonoBehaviour
     private static AchievementManager instance;
     public static AchievementManager Instance {  get { return instance; } }
 
-    public static Queue<string> newAchivements = new Queue<string>();
+    public static Queue<string> newAchievements = new Queue<string>();
     public AchievementUI achievementUI;
 
     public static GameData gameData;
@@ -47,7 +47,7 @@ public class AchievementManager : MonoBehaviour
         gameData.titleClickCnt++;
         if(gameData.titleClickCnt >= 5)
         {
-            newAchivements.Enqueue("5");
+            newAchievements.Enqueue("5");
         }
         else
         {
@@ -89,9 +89,9 @@ public class AchievementManager : MonoBehaviour
 
     public void Update()
     {
-        if(newAchivements.Count > 0)
+        if(newAchievements.Count > 0)
         {
-            Debug.Log(newAchivements.Peek());
+            Debug.Log(newAchievements.Peek());
             Debug.Log(achievementUI);
             if(achievementUI == null)
             {
@@ -99,26 +99,28 @@ public class AchievementManager : MonoBehaviour
             }
             else if (!achievementUI.isArise)
             {
-                achievementUI.SetNewArchivement(newAchivements.Peek());
-                newAchivements.Dequeue();
+                achievementUI.SetNewArchivement(newAchievements.Peek());
+                newAchievements.Dequeue();
                 
             }
         }
-        if (Input.GetKeyDown(KeyCode.Escape)) 
-        {
-            newAchivements.Enqueue("7");
-        }
+        if(GameManager.state == GameManager.gameState.Title)
+            if (Input.GetKeyDown(KeyCode.Escape)) 
+            {
+                newAchievements.Enqueue("7");
+            }
     }
 
     public void LoadAchivements()
     {
+        //        TextAsset jsonText = ResourceManager.Instance.jsonLoader.LoadJsonData("Data/Archievement");
         TextAsset jsonText = Resources.Load<TextAsset>("Data/Archievement");
         AchievementList archievementList = JsonUtility.FromJson<AchievementList>(jsonText.text);
         achievements = archievementList.list;
-
+        Debug.Log(achievements.Count);
     }
 
-    public static Achievement FindAchievementByID(string id)
+    public Achievement FindAchievementByID(string id)
     {
         return achievements.FirstOrDefault(x => x.id == id);
     }
@@ -128,7 +130,7 @@ public class AchievementManager : MonoBehaviour
         if (!PlayerPrefs.HasKey($"A{id}"))
         {
             PlayerPrefs.SetInt($"A{id}", 1);
-            newAchivements.Enqueue(id);
+            newAchievements.Enqueue(id);
         }
     }
 
@@ -138,4 +140,11 @@ public class AchievementManager : MonoBehaviour
         GameObject canvas = GameObject.Find("Canvas");
         achievementUI = Instantiate(achievementUIPrefs, canvas.transform).GetComponent<AchievementUI>(); ;
     }
+
+    public static List<Achievement> GetAchievementList() 
+    {
+        Debug.Log(achievements.Count);
+        return achievements;
+    }
+
 }
