@@ -86,6 +86,7 @@ GameObject:
   - component: {fileID: 268330537801151530}
   - component: {fileID: 6983556029348314743}
   - component: {fileID: 562653479958147372}
+  - component: {fileID: 5742841565816150456}
   m_Layer: 5
   m_Name: DescCardUI
   m_TagString: Untagged
@@ -162,6 +163,22 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5742841565816150456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2014786587971721901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8e0491960f7455498f1da1dc037871e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameTxt: {fileID: 5545258039420724773}
+  descriptionTxt: {fileID: 7645398486124917609}
+  playerTxt: {fileID: 6099603556775945796}
+  img: {fileID: 1601345786667804825}
 --- !u!1 &2302549279720416781
 GameObject:
   m_ObjectHideFlags: 0
@@ -687,7 +704,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    m_Font: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -833,7 +850,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.122641504, g: 0.122641504, b: 0.122641504, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
