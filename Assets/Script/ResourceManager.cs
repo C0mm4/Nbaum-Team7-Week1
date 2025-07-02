@@ -10,7 +10,7 @@ public class ResourceManager : MonoBehaviour
     public JsonLoader jsonLoader = new JsonLoader();
 
     Dictionary<string, Sprite> portraits = new Dictionary<string, Sprite>();
-    public List<Description> descriptions = new();
+    List<Description> descriptions = new();
 
     private void Awake()
     {
@@ -18,19 +18,25 @@ public class ResourceManager : MonoBehaviour
         {
             instance = this;
         }
-        LoadDescription();
-        Debug.Log(descriptions.Count);
 
-        foreach (Description description in descriptions)
+        LoadDescription();
+
+        // temporal
+        List<Description> temp = new List<Description>(descriptions);
+
+        foreach (Description description in temp)
         {
             Sprite sprite = Resources.Load<Sprite>(description.img);
-            if (sprite != null)
+     
+            if (!sprite)
+            {
+                descriptions.Remove(description);
+            }
+            else
             {
                 portraits.Add(description.img, sprite);
             }
         }
-
-        Debug.Log(portraits.Count);
 
     }
 
@@ -50,7 +56,7 @@ public class ResourceManager : MonoBehaviour
 
     public Description GetRandomDescription()
     {
-        int randomIndex = Random.Range(0, 3);
+        int randomIndex = Random.Range(0, portraits.Count);
         Description desc = descriptions[randomIndex];
 
         return desc;

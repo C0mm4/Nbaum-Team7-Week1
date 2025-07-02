@@ -5,25 +5,12 @@ using UnityEngine.UI;
 
 public class DescView : MonoBehaviour
 {
-    public Image imageMain;
-    public Text titleText;
-    public Text descText;
-
-    private void Awake()
-    {
-        
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [SerializeField]
+    private Image imageMain;
+    [SerializeField]
+    private Text titleText;
+    [SerializeField]
+    private Text descText;
 
     public void SetDescView(Description desc)
     {

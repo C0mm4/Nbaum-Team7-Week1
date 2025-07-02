@@ -6,12 +6,6 @@ using UnityEngine.UI;
 public class DescButton : MonoBehaviour
 {
     [SerializeField]
-    Image imageMain;
-    [SerializeField]
-    Text titleText;
-    [SerializeField]
-    Text descText;
-    [SerializeField]
     GameObject descView;
     [SerializeField]
     GameObject resultView;
