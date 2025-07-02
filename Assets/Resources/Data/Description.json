@@ -4,7 +4,7 @@
       "id": "1",
       "title": "토리",
       "description": "우리집에 살고있는 강아지. 포메라니안이라 했는데 크고보니 폼피츠(포메+스피츠)였습니다.",
-      "img" : "Images/Portrait/JDS_Card_Dog"
+      "img": "Images/Portrait/JDS_Card_Dog"
     },
     {
       "id": "2",
@@ -39,6 +39,24 @@
       "id": "7",
       "title": "내리시는 문은 이쪽입니다",
       "description": "타이틀 화면에서 ESC누르기"
+    },
+    {
+      "id": "8",
+      "title": "두키",
+      "description": "작은누님네 강아지. 한마리가 더 있다 애들이 순해서 사람들이 오면 바로 달려듦",
+      "img": "Images/Portrait/SMC_Card_DuKi"
+    },
+    {
+      "id": "9",
+      "title": "미키마우스",
+      "description": "저작권이 풀린 '그놈'이다 이것을 주제로 수상한 공포게임들이 많이 나왔다는 소문이...",
+      "img": "Images/Portrait/SMC_Card_Mickey"
+    },
+    {
+      "id": "10",
+      "title": "미소노 미카",
+      "description": "블루아카이브 미소노 미카 오픈 유저로서 가장 최애캐이다",
+      "img": "Images/Portrait/SMC_Card_Mika"
     }
 
   ]
