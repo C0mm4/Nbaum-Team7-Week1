@@ -13,6 +13,7 @@ public class InGameManager : MonoBehaviour
     public GameObject card;
     
     public GameObject resultPanel;
+    public GameObject TextImg;
 
     public Card One;
     public Card Two;
@@ -22,8 +23,6 @@ public class InGameManager : MonoBehaviour
     public float leftT;
 
     public bool isCanInput;
-
-
 
     //hidden bool
     public bool what_hid = false;
@@ -72,7 +71,8 @@ public class InGameManager : MonoBehaviour
 
         if (!what_hid)
         {
-            GameStartSetting(12);
+            //GameStartSetting(12);
+            GameStartSetting(1);
         }
         else if (what_hid)
         {
@@ -93,9 +93,10 @@ public class InGameManager : MonoBehaviour
 
         if(leftT < 0f)
         {
-            Timmer.text = "0.00";
+            Timmer.text = "0.00"; 
             GameManager.state = GameManager.gameState.Result;
             EndGame();
+            
         }
     }
 
@@ -143,7 +144,7 @@ public class InGameManager : MonoBehaviour
         {
             resultUI.Init();
         }
-
+        TextImg.transform.SetAsFirstSibling();
         GameManager.Instance.GameClear();
     }
 
