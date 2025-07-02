@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour
     }
     public static gameState state;
 
+    public static int stageLevel;
+
     private void Awake()
     {
         if (instance == null) 
@@ -81,5 +83,17 @@ public class GameManager : MonoBehaviour
     {
         GameObject go = GameObject.Find("Canvas").transform.Find("AchievementListUI").gameObject;
         go.SetActive(true);
+    }
+
+    public void OnClickGameStartBtn()
+    {
+        GameObject go = GameObject.Find("Canvas").transform.Find("LevelSelectUI").gameObject;
+        go.SetActive(true);
+    }
+
+    public void OnClickBackInLevelSelectUI()
+    {
+        GameObject go = GameObject.Find("Canvas").transform.Find("LevelSelectUI").gameObject;
+        go.SetActive(false);
     }
 }

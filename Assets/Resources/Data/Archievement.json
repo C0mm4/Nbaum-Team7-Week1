@@ -49,6 +49,16 @@
       "id": "10",
       "title": "[이렇게까지 바란건 아닌데]",
       "description": "히든 스테이지 5회 성공"
-    }
+    },
+    {
+      "id": "11",
+      "title": "[OIIA OIIA]",
+      "description": "OIIA OIIA"
+    },
+    {
+      "id": "12",
+      "title": "[너 봤구나?]",
+      "description": "숨겨진 UI 클릭"
+    } 
   ]
 }
