@@ -1,7 +1,9 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using UnityEngine.XR;
 
@@ -20,12 +22,35 @@ public class Card : MonoBehaviour
 
     public bool isFlip = false;
 
+    Vector2 move;
+    float speed = 4.0f;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        move = Random.insideUnitCircle.normalized;
     }
 
+    void Update()
+    {
+        if (InGameManager.Instance.what_hid)
+        {
+            Vector2 pos = transform.position;
+            Vector2 nextPos = pos + move.normalized * speed * Time.deltaTime;
+
+            if (nextPos.x < -2.57f || nextPos.x > 2.57f)
+            {
+                move = Vector2.Reflect(move, Vector2.right);
+            }
+            if (nextPos.y < -4.4f || nextPos.y > 4.4f)
+            {
+                move = Vector2.Reflect(move, Vector2.up); 
+            }
+
+            transform.position += (Vector3)(move.normalized * speed * Time.deltaTime);
+        }
+
+    }
     public void FlipCard()
     {
         if (InGameManager.Instance.isCanInput && !isFlip)
