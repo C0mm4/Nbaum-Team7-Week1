@@ -41,20 +41,38 @@
     {
       "id": "7",
       "title": "봄베이 사파이어",
-      "description" : "봄베이 맛있습니다. 한 잔 하실?",
-      "img" : "Images/Portrait/KHU_Bombay"
+      "description": "봄베이 맛있습니다. 한 잔 하실?",
+      "img": "Images/Portrait/KHU_Bombay"
     },
     {
       "id": "8",
       "title": "핏쨔",
-      "description" : "신선한 모짜렐라와 신선한 바질, 그리고 신선한 토마토 소스로 만든 마르게리따는 매우 맛있습니다. 아 배고프다 피자 먹으러 가야지",
-      "img" : "Images/Portrait/KHU_Bombay"
+      "description": "신선한 모짜렐라와 신선한 바질, 그리고 신선한 토마토 소스로 만든 마르게리따는 매우 맛있습니다. 아 배고프다 피자 먹으러 가야지",
+      "img": "Images/Portrait/KHU_Bombay"
     },
     {
       "id": "9",
       "title": "Ryzen? 1700",
-      "description" : "잘 보면 매우 수상한 Ryzen CPU입니다. 뭐가 이상할까요?",
-      "img" : "Images/Portrait/KHU_Bombay"
+      "description": "잘 보면 매우 수상한 Ryzen CPU입니다. 뭐가 이상할까요?",
+      "img": "Images/Portrait/KHU_Bombay"
+    },
+    {
+      "id": "10",
+      "title": "복돌이",
+      "description": "군대전역하고 와보니 왠 솜뭉치가?",
+      "img": "Images/Portrait/LDH_Card_Maltese"
+    },
+    {
+      "id": "11",
+      "title": "간호학과",
+      "description": "저는 어디에 있을까요?",
+      "img": "Images/Portrait/LDH_Card_Nursing"
+    },
+    {
+      "id": "12",
+      "title": "배틀그라운드&플레이타임",
+      "description": "학창시절 시간을 갈아넣었습니다.",
+      "img": "Images/Portrait/LDH_Card_PUBG"
     }
   ]
 }
