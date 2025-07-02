@@ -73,6 +73,24 @@
       "title": "배틀그라운드&플레이타임",
       "description": "학창시절 시간을 갈아넣었습니다.",
       "img": "Images/Portrait/LDH_Card_PUBG"
+    },
+    {
+      "id": "13",
+      "title": "쿠키",
+      "description": "누룽지 아닙니다. 댕르신 쿠키입니다.",
+      "img": "Images/Portrait/KDY_Card_Cookie"
+    },
+    {
+      "id": "14",
+      "title": "독서",
+      "description": "제일 무서운 사람은 책 한 권만 읽은 사람이다.",
+      "img": "Images/Portrait/KDY_Card_Book"
+    },
+    {
+      "id": "15",
+      "title": "이상",
+      "description": "나는 그 이상이 퍽 아름다워 보이오.",
+      "img": "Images/Portrait/KDY_Card_YiSang"
     }
   ]
 }
