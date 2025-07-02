@@ -670,6 +670,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArchievementUI
       objectReference: {fileID: 0}
+    - target: {fileID: 1062706044200372861, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    - target: {fileID: 3468161073043725831, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    - target: {fileID: 5520045520577150837, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
     - target: {fileID: 6427932682083162141, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
       propertyPath: m_Pivot.x
       value: 1

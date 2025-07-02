@@ -12,17 +12,21 @@ public class LinkFontLegacyTexts : MonoBehaviour
     {
         Font font = AssetDatabase.LoadAssetAtPath<Font>("Assets/Font/VITRO INSPIRE OTF.otf");
 
-        foreach (var text in GameObject.FindObjectsOfType<Text>(true))
+        foreach (Transform transform in GameObject.FindObjectsOfType<Transform>(true))
         {
-            if (!text.font)
+            Text text = transform.GetComponent<Text>();
+
+            if (!text) continue;
+
+            if (text.font != font)
             {
                 text.font = font;   
                 EditorUtility.SetDirty(text);
-                Debug.Log($"폰트 수정: {text.name}");
+                Debug.Log($"Edit font : {text.name}");
             }
         }
 
-        Debug.Log("폰트 일괄 수정 완료");
+        
     }
 }
 
