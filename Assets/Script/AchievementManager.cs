@@ -56,6 +56,11 @@ public class AchievementManager : MonoBehaviour
         }
     }
 
+    public void OnClickHidden()
+    {
+        AddAchievement("12");
+    }
+
     public static void OnStartEvent()
     {
         AddAchievement("1");

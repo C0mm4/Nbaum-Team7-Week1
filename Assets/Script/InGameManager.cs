@@ -259,52 +259,16 @@ public class InGameManager : MonoBehaviour
 
     private void EndResult()
     {
-        float Check_nums;
-        switch (GameManager.stageLevel)
+        float Check_nums = float.MaxValue;
+        if (PlayerPrefs.HasKey($"Time{GameManager.stageLevel}"))
         {
-            case 0:
-                PlayerPrefs.SetString("ClearData0", "Easy Clear");
-
-                Check_nums = PlayerPrefs.GetFloat("Time0");
-
-                if (Check_nums < leftT)
-                {
-                    PlayerPrefs.SetFloat("Time0", leftT);
-                }
-                break;
-
-            case 1:
-                PlayerPrefs.SetString("ClearData0", "Normal Clear");
-
-                Check_nums = PlayerPrefs.GetFloat("Time1");
-
-                if (Check_nums < leftT)
-                {
-                    PlayerPrefs.SetFloat("Time1", leftT);
-                }
-                break;
-
-            case 2:
-                PlayerPrefs.SetString("ClearData0", "Hard Clear");
-
-                Check_nums = PlayerPrefs.GetFloat("Time2");
-
-                if (Check_nums < leftT)
-                {
-                    PlayerPrefs.SetFloat("Time2", leftT);
-                }
-                break;
-
-            case 3:
-                PlayerPrefs.SetString("ClearData0", "??? Clear");
-
-                Check_nums = PlayerPrefs.GetFloat("Time3");
-
-                if (Check_nums < leftT)
-                {
-                    PlayerPrefs.SetFloat("Time3", leftT);
-                }
-                break;
+            Check_nums = PlayerPrefs.GetFloat($"Time{GameManager.stageLevel}");
         }
+
+        if (Check_nums < leftT)
+        {
+            PlayerPrefs.SetFloat($"Time{GameManager.stageLevel}", leftT);
+        }
+
     }
 }
