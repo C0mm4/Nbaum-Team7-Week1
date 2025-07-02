@@ -4,93 +4,108 @@
       "id": "1",
       "title": "토리",
       "description": "우리집에 살고있는 강아지. 포메라니안이라 했는데 크고보니 폼피츠(포메+스피츠)였습니다.",
-      "img": "Images/Portrait/JDS_Card_Dog"
+      "img": "Images/Portrait/JDS_Card_Dog",
+      "player": "정대성"
     },
     {
       "id": "2",
       "title": "티츄",
       "description": "요즘 빠진 보드게임. 진짜 재밌음. 여러분들도 한 번씩 츄라이 츄라이.",
-      "img": "Images/Portrait/JDS_Card_Tichu"
+      "img": "Images/Portrait/JDS_Card_Tichu",
+      "player": "정대성"
 
     },
     {
       "id": "3",
       "title": "롯데 자이언츠",
       "description": "올해는 진짜 다르다.\n대 황 롯 데.",
-      "img": "Images/Portrait/JDS_Card_Lotte"
+      "img": "Images/Portrait/JDS_Card_Lotte",
+      "player": "정대성"
 
     },
     {
       "id": "4",
       "title": "두키",
       "description": "작은누님네 강아지. 한마리가 더 있다 애들이 순해서 사람들이 오면 바로 달려듦",
-      "img": "Images/Portrait/SMC_Card_DuKi"
+      "img": "Images/Portrait/SMC_Card_DuKi",
+      "player": "신명철"
     },
     {
       "id": "5",
       "title": "미키마우스",
       "description": "저작권이 풀린 '그놈'이다 이것을 주제로 수상한 공포게임들이 많이 나왔다는 소문이...",
-      "img": "Images/Portrait/SMC_Card_Mickey"
+      "img": "Images/Portrait/SMC_Card_Mickey",
+      "player": "신명철"
     },
     {
       "id": "6",
       "title": "미소노 미카",
       "description": "블루아카이브 미소노 미카 오픈 유저로서 가장 최애캐이다",
-      "img": "Images/Portrait/SMC_Card_Mika"
+      "img": "Images/Portrait/SMC_Card_Mika",
+      "player": "신명철"
     },
     {
       "id": "7",
       "title": "봄베이 사파이어",
       "description": "봄베이 맛있습니다. 한 잔 하실?",
-      "img": "Images/Portrait/KHU_Card_Bombay", "player" : "강형욱"
+      "img": "Images/Portrait/KHU_Card_Bombay", 
+      "player" : "강형욱"
     },
     {
       "id": "8",
       "title": "핏쨔",
       "description": "신선한 모짜렐라와 신선한 바질, 그리고 신선한 토마토 소스로 만든 마르게리따는 매우 맛있습니다. 아 배고프다 피자 먹으러 가야지",
-      "img": "Images/Portrait/KHU_Card_Pizza", "player" : "강형욱"
+      "img": "Images/Portrait/KHU_Card_Pizza",
+      "player": "강형욱"
     },
     {
       "id": "9",
       "title": "Ryzen? 1700",
       "description": "잘 보면 매우 수상한 Ryzen CPU입니다. 뭐가 이상할까요?",
-      "img": "Images/Portrait/KHU_Card_Ryzen", "player" : "강형욱"
+      "img": "Images/Portrait/KHU_Card_Ryzen", 
+      "player" : "강형욱"
     },
     {
       "id": "10",
       "title": "복돌이",
       "description": "군대전역하고 와보니 왠 솜뭉치가?",
-      "img": "Images/Portrait/LDH_Card_Maltese"
+      "img": "Images/Portrait/LDH_Card_Maltese",
+      "player": "이동현"
     },
     {
       "id": "11",
       "title": "간호학과",
       "description": "저는 어디에 있을까요?",
-      "img": "Images/Portrait/LDH_Card_Nursing"
+      "img": "Images/Portrait/LDH_Card_Nursing",
+      "player": "이동현"
     },
     {
       "id": "12",
       "title": "배틀그라운드&플레이타임",
       "description": "학창시절 시간을 갈아넣었습니다.",
-      "img": "Images/Portrait/LDH_Card_PUBG"
+      "img": "Images/Portrait/LDH_Card_PUBG",
+      "player": "이동현"
     },
     {
       "id": "13",
       "title": "쿠키",
       "description": "누룽지 아닙니다. 댕르신 쿠키입니다.",
-      "img": "Images/Portrait/KDY_Card_Cookie"
+      "img": "Images/Portrait/KDY_Card_Cookie",
+      "player": "김도율"
     },
     {
       "id": "14",
       "title": "독서",
       "description": "제일 무서운 사람은 책 한 권만 읽은 사람이다.",
-      "img": "Images/Portrait/KDY_Card_Book"
+      "img": "Images/Portrait/KDY_Card_Book",
+      "player": "김도율"
     },
     {
       "id": "15",
       "title": "이상",
       "description": "나는 그 이상이 퍽 아름다워 보이오.",
-      "img": "Images/Portrait/KDY_Card_YiSang"
+      "img": "Images/Portrait/KDY_Card_YiSang",
+      "player": "김도율"
     }
   ]
 }
