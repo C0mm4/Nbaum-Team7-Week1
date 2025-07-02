@@ -66,7 +66,8 @@ public class Card : MonoBehaviour
             isFlip = true;
             anim.SetBool("isOpen", true);
             Invoke("OpenCardHanlder", 0.5f);
-            
+
+            AchievementManager.OnFlipEvent();
 
             if (InGameManager.Instance.leftCards > 0)
             {

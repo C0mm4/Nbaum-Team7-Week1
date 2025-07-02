@@ -68,7 +68,6 @@ public class InGameManager : MonoBehaviour
         {
             PlayerPrefs.SetInt("isFirstRun", 1);
             AchievementManager.OnStartEvent();
-            AchievementManager.AddAchievement("1");
         }
 
         AchievementManager.Instance.CreateUI();
@@ -95,7 +94,6 @@ public class InGameManager : MonoBehaviour
         {
             //Hidden Card Size Set
             Card_size = 10;
-            AchievementManager.AddAchievement("8");
         }
 
         GameStartSetting(Card_size);
