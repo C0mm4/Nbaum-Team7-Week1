@@ -1679,6 +1679,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ArchievementUI
       objectReference: {fileID: 0}
+    - target: {fileID: 772872647412838367, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1062706044200372861, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
       propertyPath: m_FontData.m_Font
       value: 

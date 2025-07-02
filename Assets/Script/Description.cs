@@ -9,6 +9,7 @@ public class Description
     public string title;
     public string img;
     public string description;
+    public string player;
 }
 
 [System.Serializable]

@@ -67,6 +67,7 @@ public class InGameManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("isFirstRun"))
         {
             PlayerPrefs.SetInt("isFirstRun", 1);
+            AchievementManager.OnStartEvent();
             AchievementManager.AddAchievement("1");
         }
 
@@ -94,6 +95,7 @@ public class InGameManager : MonoBehaviour
         {
             //Hidden Card Size Set
             Card_size = 10;
+            AchievementManager.AddAchievement("8");
         }
 
         GameStartSetting(Card_size);
@@ -114,8 +116,7 @@ public class InGameManager : MonoBehaviour
             {
                 Timmer.text = "0.00";
                 GameManager.state = GameManager.gameState.Result;
-                EndGame();
-
+                GameFail();
             }
         }
 
@@ -137,7 +138,7 @@ public class InGameManager : MonoBehaviour
                 //End Game
                 Invoke("EndGame", 0.5f);
             }
-            AchievementManager.AddAchievement("2");
+            AchievementManager.OnMatchEvent();
             isCanInput = true;
         }
         else
@@ -145,6 +146,7 @@ public class InGameManager : MonoBehaviour
             One.CloseCard();
             Two.CloseCard();
             Invoke("FailEvent", 0.7f);
+            AchievementManager.OnMatchFailEvent();
         }
 
         card_reset();
@@ -167,6 +169,20 @@ public class InGameManager : MonoBehaviour
         }
         TextImg.transform.SetAsFirstSibling();
         GameManager.Instance.GameClear();
+    }
+
+    void GameFail()
+    {
+
+        resultPanel.SetActive(true);
+
+        ResultUI resultUI = resultPanel.GetComponent<ResultUI>();
+        if (resultUI != null)
+        {
+            resultUI.Init();
+        }
+        TextImg.transform.SetAsFirstSibling();
+        GameManager.Instance.GameFail();
     }
 
     void FailEvent()
