@@ -86,7 +86,7 @@ public class lol : MonoBehaviour
 
     void OnChangeLevelDrowndown(int level)
     {
-        GameManager.Instance.stageLevel = level;
+        GameManager.stageLevel = level;
         if(level == 2)
         {
             auK.gameObject.SetActive(true);
