@@ -38,17 +38,6 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        if(state == gameState.Title)
-        {
-            GameData.titleTime += Time.deltaTime;
-            if (GameData.titleTime >= 60f)
-            {
-                AchievementManager.AddAchievement("6");
-            }
-        }
-    }
 
     public void GameStart()
     {
@@ -58,13 +47,13 @@ public class GameManager : MonoBehaviour
     public void GameClear()
     {
         state = gameState.Result;
-        AchievementManager.AddAchievement("4");
+        AchievementManager.OnClearEvent();
     }
 
     public void GameFail()
     {
         state = gameState.Result;
-        AchievementManager.AddAchievement("3");
+        AchievementManager.OnFailEvent();
     }
 
 

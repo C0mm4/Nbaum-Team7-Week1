@@ -26,6 +26,13 @@ public class InGameManager : MonoBehaviour
 
     public bool isCanInput;
 
+
+    /*
+        Playerprefs
+        String  ClearData0, ClearData1, ClearData2, ClearData3
+        float   Time0, Time1, Time2, Time3
+    */
+
     List<string> cards = new List<string> 
     { 
         "JDS_Card_Dog", 
@@ -61,39 +68,38 @@ public class InGameManager : MonoBehaviour
 
     void Start()
     {
-        //hidden
-        //GameManager.stageLevel = 2;
 
         if (!PlayerPrefs.HasKey("isFirstRun"))
         {
             PlayerPrefs.SetInt("isFirstRun", 1);
-            AchievementManager.AddAchievement("1");
+            AchievementManager.OnStartEvent();
         }
 
         AchievementManager.Instance.CreateUI();
 
         //Card Size Set
         // *enen num plz*
-        if (GameManager.stageLevel == 0)
+        switch(GameManager.stageLevel)
         {
-            //ezsy Size Set
-            Card_size = 12;
-        }
-        else if (GameManager.stageLevel == 1)
-        {
-            //Normal Card Size Set
-            Card_size = 20;
-        }
-        else if (GameManager.stageLevel == 2)
-        {
-            //hard Size Set
-            Card_size = 30;
+            case 0:
+                //ezsy Size Set
+                Card_size = 12;
+                break;
 
-        }
-        else if (GameManager.stageLevel == 3)
-        {
-            //Hidden Card Size Set
-            Card_size = 10;
+            case 1:
+                //Normal Card Size Set
+                Card_size = 20;
+                break;
+
+            case 2:
+                //hard Size Set
+                Card_size = 30;
+                break;
+
+            case 3:
+                //Hidden Card Size Set
+                Card_size = 10;
+                break;
         }
 
         GameStartSetting(Card_size);
@@ -114,9 +120,9 @@ public class InGameManager : MonoBehaviour
             {
                 Timmer.text = "0.00";
                 GameManager.state = GameManager.gameState.Result;
-                EndGame();
-
+                GameFail();
             }
+
         }
 
     }
@@ -134,10 +140,11 @@ public class InGameManager : MonoBehaviour
             if (leftCards == 0)
             {
                 GameManager.state = GameManager.gameState.Result;
+                EndResult();
                 //End Game
                 Invoke("EndGame", 0.5f);
             }
-            AchievementManager.AddAchievement("2");
+            AchievementManager.OnMatchEvent();
             isCanInput = true;
         }
         else
@@ -145,6 +152,7 @@ public class InGameManager : MonoBehaviour
             One.CloseCard();
             Two.CloseCard();
             Invoke("FailEvent", 0.7f);
+            AchievementManager.OnMatchFailEvent();
         }
 
         card_reset();
@@ -166,7 +174,22 @@ public class InGameManager : MonoBehaviour
             resultUI.Init();
         }
         TextImg.transform.SetAsFirstSibling();
+
         GameManager.Instance.GameClear();
+    }
+
+    void GameFail()
+    {
+
+        resultPanel.SetActive(true);
+
+        ResultUI resultUI = resultPanel.GetComponent<ResultUI>();
+        if (resultUI != null)
+        {
+            resultUI.Init();
+        }
+        TextImg.transform.SetAsFirstSibling();
+        GameManager.Instance.GameFail();
     }
 
     void FailEvent()
@@ -201,27 +224,28 @@ public class InGameManager : MonoBehaviour
             float x = 0.0f;
             float y = 0.0f;
 
-            if (GameManager.stageLevel == 0)
+            switch(GameManager.stageLevel)
             {
-                //ezsy Size Set
-                x = (i % 3) * 1.4f - 1.4f;
-                y = (i / 3) * 1.3f - 2.4f;
-            }
-            else if (GameManager.stageLevel == 1)
-            {
-                x = (i % 4) * 1.4f - 2.1f;
-                y = (i / 4) * 1.3f - 3.0f;
-            }
-            else if (GameManager.stageLevel == 2)
-            {
-                x = (i % 5) * 1.1f - 2.2f;
-                y = (i / 5) * 1.3f - 4.0f;
-            }
-            else if (GameManager.stageLevel == 3)
-            {
-                //Hidden Card Size Set
-                x = 0;
-                y = 0;
+                case 0:
+                    //ezsy Size Set
+                    x = (i % 3) * 1.4f - 1.4f;
+                    y = (i / 3) * 1.3f - 2.4f;
+                    break;
+
+                case 1:
+                    x = (i % 4) * 1.4f - 2.1f;
+                    y = (i / 4) * 1.3f - 3.0f;
+                    break;
+
+                case 2:
+                    x = (i % 5) * 1.1f - 2.2f;
+                    y = (i / 5) * 1.3f - 4.0f;
+                    break;
+
+                case 3:
+                    x = 0.0f;
+                    y = 0.0f;
+                    break;
             }
 
             go.transform.position = new Vector2(x, y);
@@ -233,4 +257,54 @@ public class InGameManager : MonoBehaviour
     }
 
 
+    private void EndResult()
+    {
+        float Check_nums;
+        switch (GameManager.stageLevel)
+        {
+            case 0:
+                PlayerPrefs.SetString("ClearData0", "Easy Clear");
+
+                Check_nums = PlayerPrefs.GetFloat("Time0");
+
+                if (Check_nums < leftT)
+                {
+                    PlayerPrefs.SetFloat("Time0", leftT);
+                }
+                break;
+
+            case 1:
+                PlayerPrefs.SetString("ClearData0", "Normal Clear");
+
+                Check_nums = PlayerPrefs.GetFloat("Time1");
+
+                if (Check_nums < leftT)
+                {
+                    PlayerPrefs.SetFloat("Time1", leftT);
+                }
+                break;
+
+            case 2:
+                PlayerPrefs.SetString("ClearData0", "Hard Clear");
+
+                Check_nums = PlayerPrefs.GetFloat("Time2");
+
+                if (Check_nums < leftT)
+                {
+                    PlayerPrefs.SetFloat("Time2", leftT);
+                }
+                break;
+
+            case 3:
+                PlayerPrefs.SetString("ClearData0", "??? Clear");
+
+                Check_nums = PlayerPrefs.GetFloat("Time3");
+
+                if (Check_nums < leftT)
+                {
+                    PlayerPrefs.SetFloat("Time3", leftT);
+                }
+                break;
+        }
+    }
 }

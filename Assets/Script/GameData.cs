@@ -16,6 +16,8 @@ public class GameData
 
     public static float titleTime = 0;
 
+    public static int clearCnt;
+    public static int hiddenClearCnt;
     public List<bool> archivementsLock = new List<bool>();
 
     public int titleClickCnt = 0;
@@ -32,6 +34,22 @@ public class GameData
         else
         {
             isFirstrun = false;
+        }
+        if (!PlayerPrefs.HasKey("ClearCnt"))
+        {
+            clearCnt = 0;
+        }
+        else
+        {
+            clearCnt = PlayerPrefs.GetInt("ClearCnt");
+        }
+        if (!PlayerPrefs.HasKey("hiddenClearCnt"))
+        {
+            hiddenClearCnt = 0;
+        }
+        else
+        {
+            hiddenClearCnt = PlayerPrefs.GetInt("hiddenClearCnt");
         }
     }
 }
