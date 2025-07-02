@@ -26,7 +26,7 @@ public class LinkFontLegacyTexts : MonoBehaviour
             }
         }
 
-        
+        Debug.Log("FixFont Finished.");
     }
 }
 
