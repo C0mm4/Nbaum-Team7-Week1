@@ -34,7 +34,7 @@ AudioMixerGroupController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ' Effect'
+  m_Name: Effect
   m_AudioMixer: {fileID: 24100000}
   m_GroupID: 9ce031afba09ad941bc7dc5e07ec5d3e
   m_Children: []
