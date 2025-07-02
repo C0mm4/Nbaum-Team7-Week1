@@ -31,8 +31,11 @@ public class Card : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (InGameManager.Instance.abcd == 4)
+
+        if (GameManager.stageLevel == 3)
         {
+            Debug.Log("Stage Level : "
+    + GameManager.stageLevel);
             move = Random.insideUnitCircle.normalized;
             anim.SetBool("Hidden", true);        
         }
@@ -40,7 +43,7 @@ public class Card : MonoBehaviour
 
     void Update()
     {
-        if (InGameManager.Instance.abcd == 4)
+        if (GameManager.stageLevel == 3)
         {
             if (hidden_firstCheck)
             {
@@ -51,7 +54,7 @@ public class Card : MonoBehaviour
             else
             { 
                 MoveCard();
-                transform.Rotate(0, 0, 1);
+                transform.Rotate(0, 0, 10);
             }
         }
     }
@@ -59,11 +62,11 @@ public class Card : MonoBehaviour
     {
         if (InGameManager.Instance.isCanInput && !isFlip)
         {
-            Debug.Log("A");
+            //Debug.Log("A");
             isFlip = true;
             anim.SetBool("isOpen", true);
             Invoke("OpenCardHanlder", 0.5f);
-           
+            
 
             if (InGameManager.Instance.leftCards > 0)
             {
@@ -76,6 +79,7 @@ public class Card : MonoBehaviour
                     InGameManager.Instance.Two = this;
                     InGameManager.Instance.Matched();
                 }
+                speed++;
             }
 
         }
@@ -98,7 +102,7 @@ public class Card : MonoBehaviour
 
     void CloseCardHandler()
     {
-        Debug.Log("T");
+        //Debug.Log("T");
         anim.SetBool("isOpen", false);
 
         isFlip = false;
@@ -153,7 +157,7 @@ public class Card : MonoBehaviour
         {
             move = Vector2.Reflect(move, Vector2.right);
         }
-        if (nextPos.y < -4.4f || nextPos.y > 4.4f)
+        if (nextPos.y < -4.4f || nextPos.y > 2.8f)
         {
             move = Vector2.Reflect(move, Vector2.up);
         }

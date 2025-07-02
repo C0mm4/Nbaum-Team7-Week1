@@ -26,10 +26,6 @@ public class InGameManager : MonoBehaviour
 
     public bool isCanInput;
 
-    //hidden bool
-    public int abcd = 2;
-    //
-
     List<string> cards = new List<string> 
     { 
         "JDS_Card_Dog", 
@@ -66,7 +62,7 @@ public class InGameManager : MonoBehaviour
     void Start()
     {
         //hidden
-        //what_hid = true;
+        //GameManager.stageLevel = 2;
 
         if (!PlayerPrefs.HasKey("isFirstRun"))
         {
@@ -78,23 +74,23 @@ public class InGameManager : MonoBehaviour
 
         //Card Size Set
         // *enen num plz*
-        if (abcd == 1)
+        if (GameManager.stageLevel == 0)
         {
             //ezsy Size Set
             Card_size = 12;
         }
-        else if (abcd == 2)
+        else if (GameManager.stageLevel == 1)
         {
             //Normal Card Size Set
             Card_size = 20;
         }
-        else if (abcd == 3)
+        else if (GameManager.stageLevel == 2)
         {
             //hard Size Set
             Card_size = 30;
 
         }
-        else if (abcd == 4)
+        else if (GameManager.stageLevel == 3)
         {
             //Hidden Card Size Set
             Card_size = 10;
@@ -108,6 +104,7 @@ public class InGameManager : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log(GameManager.stageLevel);
         if(GameManager.state == GameManager.gameState.InPlay)
         {
             leftT -= Time.deltaTime;
@@ -203,27 +200,27 @@ public class InGameManager : MonoBehaviour
             float x = 0.0f;
             float y = 0.0f;
 
-            if (abcd == 1)
+            if (GameManager.stageLevel == 0)
             {
                 //ezsy Size Set
                 x = (i % 3) * 1.4f - 1.4f;
                 y = (i / 3) * 1.3f - 2.4f;
             }
-            else if (abcd == 2)
+            else if (GameManager.stageLevel == 1)
             {
                 x = (i % 4) * 1.4f - 2.1f;
-                y = (i / 4) * 1.3f - 4.0f;
+                y = (i / 4) * 1.3f - 3.0f;
             }
-            else if (abcd == 3)
+            else if (GameManager.stageLevel == 2)
             {
-                x = (i % 5) * 1.4f - 2.1f;
+                x = (i % 5) * 1.1f - 2.2f;
                 y = (i / 5) * 1.3f - 4.0f;
             }
-            else if (abcd == 4)
+            else if (GameManager.stageLevel == 3)
             {
                 //Hidden Card Size Set
-                x = (i % 4) * 1.4f - 1.1f;
-                y = (i / 4) * 1.3f - 2.0f;
+                x = 0;
+                y = 0;
             }
 
             go.transform.position = new Vector2(x, y);
