@@ -57,7 +57,24 @@
       "title": "미소노 미카",
       "description": "블루아카이브 미소노 미카 오픈 유저로서 가장 최애캐이다",
       "img": "Images/Portrait/SMC_Card_Mika"
+    },
+    {
+      "id": "11",
+      "title": "봄베이 사파이어",
+      "description" : "봄베이 맛있습니다. 한 잔 하실?",
+      "img" : "Images/Portrait/KHU_Bombay"
+    },
+    {
+      "id": "12",
+      "title": "핏쨔",
+      "description" : "신선한 모짜렐라와 신선한 바질, 그리고 신선한 토마토 소스로 만든 마르게리따는 매우 맛있습니다. 아 배고프다 피자 먹으러 가야지",
+      "img" : "Images/Portrait/KHU_Bombay"
+    },
+    {
+      "id": "13",
+      "title": "Ryzen? 1700",
+      "description" : "잘 보면 매우 수상한 Ryzen CPU입니다. 뭐가 이상할까요?",
+      "img" : "Images/Portrait/KHU_Bombay"
     }
-
   ]
 }
