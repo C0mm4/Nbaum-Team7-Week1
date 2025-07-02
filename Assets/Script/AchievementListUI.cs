@@ -10,6 +10,9 @@ public class AchievementListUI : MonoBehaviour
     public Button backBtn;
     public Scrollbar scroll;
 
+    public List<GameObject> contentViews;
+    public List<Button> viewSelectBtns;
+
     public void OnEnable()
     {
         GameManager.state = GameManager.gameState.Menu;
@@ -30,6 +33,23 @@ public class AchievementListUI : MonoBehaviour
         }
 
         backBtn.onClick.RemoveAllListeners();
+    }
+
+    public void Start()
+    {
+        for (int i = 0; i < viewSelectBtns.Count; i++) 
+        {
+            int index = i;
+            viewSelectBtns[i].onClick.AddListener(() =>
+            {
+                for(int j = 0; j < contentViews.Count; j++)
+                {
+                    contentViews[j].SetActive(false);
+                }
+                Debug.Log(index);
+                contentViews[index].SetActive(true);
+            });
+        }
     }
 
     public void SetAchievements()

@@ -109,15 +109,16 @@ public class InGameManager : MonoBehaviour
         {
             leftT -= Time.deltaTime;
             Timmer.text = leftT.ToString("N2");
+
+            if (leftT < 0f)
+            {
+                Timmer.text = "0.00";
+                GameManager.state = GameManager.gameState.Result;
+                EndGame();
+
+            }
         }
 
-        if(leftT < 0f)
-        {
-            Timmer.text = "0.00"; 
-            GameManager.state = GameManager.gameState.Result;
-            EndGame();
-            
-        }
     }
 
     public void Matched()

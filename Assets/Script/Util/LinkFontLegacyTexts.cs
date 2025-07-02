@@ -26,6 +26,36 @@ public class LinkFontLegacyTexts : MonoBehaviour
             }
         }
 
+        string[] guids = AssetDatabase.FindAssets("t:Prefab", new[] { "Assets/Prefeb" });
+
+        foreach (string guid in guids)
+        {
+            string path = AssetDatabase.GUIDToAssetPath(guid);
+            GameObject prefab = AssetDatabase.LoadAssetAtPath<GameObject>(path);
+
+            Text[] texts = prefab.GetComponentsInChildren<Text>(true);
+            bool changed = false;
+
+            foreach (Text text in texts)
+            {
+                if (!text) continue;
+
+                if (text.font != font)
+                {
+                    text.font = font;
+                    changed = true;
+                }
+            }
+
+            if (changed)
+            {
+                EditorUtility.SetDirty(prefab);
+                Debug.Log($"Fixed fonts in : {path}");
+            }
+
+            AssetDatabase.SaveAssets();
+        }
+
         Debug.Log("FixFont Finished.");
     }
 }

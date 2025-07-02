@@ -10,6 +10,10 @@ public class ResultUI : MonoBehaviour
     DescView descView;
     [SerializeField]
     ResultView resultView;
+    [SerializeField]
+    DescButton descButton;
+    [SerializeField]
+    ResultButton resultButton;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +23,9 @@ public class ResultUI : MonoBehaviour
 
     public void Init()
     {
+        descButton.OnClickDesc();
         descView.SetDescView(ResourceManager.Instance.GetRandomDescription());
+
         // todo: resultView
     }
 
