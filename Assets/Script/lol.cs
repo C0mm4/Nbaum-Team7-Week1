@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class lol : MonoBehaviour
 {
     public Image image;
+    public Dropdown dropdown;
+    public Text auK;
 
     public float R;
     public float G;
@@ -19,6 +21,9 @@ public class lol : MonoBehaviour
         R = Random.Range(0f, 1f);
         G = Random.Range(0f, 1f);
         B = Random.Range(0f, 1f);
+
+        dropdown.onValueChanged.AddListener(OnChangeLevelDrowndown);
+        auK.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -77,5 +82,18 @@ public class lol : MonoBehaviour
         }
 
         image.color = new Color(R, G, B, 0.7f);
+    }
+
+    void OnChangeLevelDrowndown(int level)
+    {
+        GameManager.Instance.stageLevel = level;
+        if(level == 2)
+        {
+            auK.gameObject.SetActive(true);
+        }
+        else
+        {
+            auK.gameObject.SetActive(false);
+        }
     }
 }
