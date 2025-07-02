@@ -23,33 +23,37 @@ public class Card : MonoBehaviour
     public bool isFlip = false;
 
     Vector2 move;
+
     float speed = 4.0f;
+
+    bool hidden_firstCheck = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        move = Random.insideUnitCircle.normalized;
+        if (InGameManager.Instance.abcd == 4)
+        {
+            move = Random.insideUnitCircle.normalized;
+            anim.SetBool("Hidden", true);        
+        }
     }
 
     void Update()
     {
-        if (InGameManager.Instance.what_hid)
+        if (InGameManager.Instance.abcd == 4)
         {
-            Vector2 pos = transform.position;
-            Vector2 nextPos = pos + move.normalized * speed * Time.deltaTime;
-
-            if (nextPos.x < -2.57f || nextPos.x > 2.57f)
+            if (hidden_firstCheck)
             {
-                move = Vector2.Reflect(move, Vector2.right);
-            }
-            if (nextPos.y < -4.4f || nextPos.y > 4.4f)
-            {
-                move = Vector2.Reflect(move, Vector2.up); 
-            }
+                Invoke("MoveCard", 3.0f);
+                hidden_firstCheck = false;
 
-            transform.position += (Vector3)(move.normalized * speed * Time.deltaTime);
+            }
+            else
+            { 
+                MoveCard();
+                transform.Rotate(0, 0, 1);
+            }
         }
-
     }
     public void FlipCard()
     {
@@ -138,5 +142,22 @@ public class Card : MonoBehaviour
         Images.enabled = false;
         yield return new WaitForSeconds(0.3f);
         Destroy(gameObject);
+    }
+
+    public void MoveCard()
+    {
+        Vector2 pos = transform.position;
+        Vector2 nextPos = pos + move.normalized * speed * Time.deltaTime;
+
+        if (nextPos.x < -2.57f || nextPos.x > 2.57f)
+        {
+            move = Vector2.Reflect(move, Vector2.right);
+        }
+        if (nextPos.y < -4.4f || nextPos.y > 4.4f)
+        {
+            move = Vector2.Reflect(move, Vector2.up);
+        }
+
+        transform.position += (Vector3)(move.normalized * speed * Time.deltaTime);
     }
 }
