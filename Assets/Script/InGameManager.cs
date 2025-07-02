@@ -20,6 +20,10 @@ public class InGameManager : MonoBehaviour
 
     public bool isCanInput;
 
+    //hidden bool
+    public bool what_hid = false;
+    //
+
     List<string> cards = new List<string> 
     { 
         "JDS_Card_Dog", 
@@ -60,31 +64,15 @@ public class InGameManager : MonoBehaviour
         }
 
         AchievementManager.Instance.CreateUI();
-        cards = cards.OrderBy(x => Random.Range(0f, 15f)).ToList();
 
-        Maincard = cards.Take(12).ToList();
-        for(int j = 0; j < 12; j++)
+        if (!what_hid)
         {
-            Maincard.Add(Maincard[j]);
+            GameStartSetting(12);
         }
-
-        //Test disable
-//        Maincard = Maincard.OrderBy(x => Random.Range(0f, 24f)).ToList();
-        //
-
-        for (int i = 0; i < Maincard.Count; i++)
+        else if (what_hid)
         {
-            GameObject go = Instantiate(card, this.transform);
-
-            float x = (i % 4) * 1.4f - 2.1f;
-            float y = (i / 4) * 1.3f - 4.0f;
-
-            go.transform.position = new Vector2(x, y);
-            go.GetComponent<Card>().Setting(Maincard[i]);    
-
+            GameStartSetting(5);
         }
-        //ī�� �� ī��Ʈ
-        leftCards = Maincard.Count;
 
         leftT = 60f;
         GameManager.Instance.GameStart();
@@ -157,4 +145,32 @@ public class InGameManager : MonoBehaviour
         isCanInput = true;
     }
 
+    void GameStartSetting(int MaxCard)
+    {
+        cards = cards.OrderBy(x => Random.Range(0f, 15f)).ToList();
+
+        Maincard = cards.Take(MaxCard).ToList();
+        for (int j = 0; j < MaxCard; j++)
+        {
+            Maincard.Add(Maincard[j]);
+        }
+
+        //Test disable
+        //        Maincard = Maincard.OrderBy(x => Random.Range(0f, 24f)).ToList();
+        //
+
+        for (int i = 0; i < Maincard.Count; i++)
+        {
+            GameObject go = Instantiate(card, this.transform);
+
+            float x = (i % 4) * 1.4f - 2.1f;
+            float y = (i / 4) * 1.3f - 4.0f;
+
+            go.transform.position = new Vector2(x, y);
+            go.GetComponent<Card>().Setting(Maincard[i]);
+
+        }
+        //Card Full Count
+        leftCards = Maincard.Count;
+    }
 }
