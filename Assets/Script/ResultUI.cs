@@ -21,12 +21,18 @@ public class ResultUI : MonoBehaviour
 
     }
 
-    public void Init()
+    public void OnGameClear()
     {
         descButton.OnClickDesc();
         descView.SetDescView(ResourceManager.Instance.GetRandomDescription());
         resultView.Init();
-        // todo: resultView
+    }
+
+    public void OnGameOver()
+    {
+        descButton.gameObject.SetActive(false);
+        resultView.Init();
+        resultButton.OnClickResult();
     }
 
 
