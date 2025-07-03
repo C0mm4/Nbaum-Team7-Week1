@@ -22,12 +22,14 @@ public class Card : MonoBehaviour
 
     public bool isFlip = false;
 
-    Vector2 move;
+    Vector2 move = new Vector2(1,1);
 
     float speed = 4.0f;
 
     bool hidden_firstCheck = true;
 
+    float Check_TIme = 0;
+    float Hidden_Card_Speed = 4.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,6 +45,7 @@ public class Card : MonoBehaviour
 
     void Update()
     {
+        Check_TIme += Time.deltaTime;
         if (GameManager.stageLevel == 3 && GameManager.state == GameManager.gameState.InPlay)
         {
             if (hidden_firstCheck)
@@ -53,6 +56,11 @@ public class Card : MonoBehaviour
             }
             else
             { 
+                if(Check_TIme > 4.0f)
+                {
+                    Hidden_Card_Speed = Random.Range(4f, 20f);
+                    Check_TIme = 0.0f;
+                }
                 MoveCard();
                 transform.Rotate(0, 0, 10);
             }
@@ -150,10 +158,10 @@ public class Card : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void MoveCard()
+    public void MoveCard(float card_speed)
     {
         Vector2 pos = transform.position;
-        Vector2 nextPos = pos + move.normalized * speed * Time.deltaTime;
+        Vector2 nextPos = pos + move.normalized * card_speed * Time.deltaTime;
 
         if (nextPos.x < -2.57f || nextPos.x > 2.57f)
         {
@@ -164,6 +172,11 @@ public class Card : MonoBehaviour
             move = Vector2.Reflect(move, Vector2.up);
         }
 
-        transform.position += (Vector3)(move.normalized * speed * Time.deltaTime);
+        transform.position += (Vector3)(move.normalized * card_speed * Time.deltaTime);
+    }
+
+    public void MoveCard()
+    {
+        MoveCard(Hidden_Card_Speed);
     }
 }
