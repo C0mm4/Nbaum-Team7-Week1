@@ -55,7 +55,7 @@ public class ResultView : MonoBehaviour
         }
 
         dataTexts[3].text = $"베스트 클리어 타임({level}) : " + bestClearTime.ToString("N2");
-        float success_ratio = ((float)(InGameManager.Instance.Card_size / 2) / (float)GameData.flipCount);
-        dataTexts[4].text = $"카드 매칭 성공률 : " + success_ratio.ToString("N2");
+        float success_ratio = ((float)((InGameManager.Instance.Card_size - InGameManager.Instance.leftCards) / 2) / (float)GameData.flipCount) * 100f;
+        dataTexts[4].text = $"카드 매칭 성공률 : " + success_ratio.ToString("N2") + "%";
     }
 }
