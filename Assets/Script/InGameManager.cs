@@ -150,6 +150,8 @@ public class InGameManager : MonoBehaviour
                 GameData.maxCombo = GameData.matchCombo;
             }
             GameData.missCombo = 0;
+
+            SoundControl.Instance.PlayEffect(ResourceManager.Instance.LoadAudioClip("Sounds/Effect/match"));
         }
         else
         {

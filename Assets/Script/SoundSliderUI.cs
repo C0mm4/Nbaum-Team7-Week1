@@ -7,10 +7,16 @@ using UnityEngine.UI;
 public class SoundSliderUI : MonoBehaviour
 {
     public AudioMixer audioMixer; // Reference to the AudioMixer component
+    public AudioSource bgm;
 
     public Slider MasterSlider; // Reference to the UI Slider component
     public Slider BGMSlider; // Reference to the UI Slider component
     public Slider EffectSlider;
+
+    public void SetBGM(AudioClip audioClip)
+    {
+        bgm.clip = audioClip;
+    }
 
     public void SetMasterVolume()
     {

@@ -17,6 +17,7 @@ public class BackButton : MonoBehaviour
     {   // Load the main menu scene (assuming it's named "MainMenuScene")
         Credit.SetActive(false);
         backButton.SetActive(false);
+        trapCardStop();
     }
 
 
@@ -24,14 +25,8 @@ public class BackButton : MonoBehaviour
 
     public void trapCardStop()
     {
-        if (Instance == null)
-            TrapCard = GetComponent<AudioSource>();
-
-        else
-            TrapCard = Instance.GetComponent<AudioSource>();
-
-        TrapCard.Pause();
-        bgmusic.Play();
+        SoundControl.Instance.PauseBGM();
+        SoundControl.Instance.PlayBGM(ResourceManager.Instance.LoadAudioClip("Sounds/BGM/bgmusic"));
     }
 
 

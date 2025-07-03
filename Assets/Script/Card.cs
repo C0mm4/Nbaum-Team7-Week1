@@ -30,6 +30,9 @@ public class Card : MonoBehaviour
 
     float Check_TIme = 0;
     float Hidden_Card_Speed = 4.0f;
+
+    public AudioClip flipSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -71,6 +74,7 @@ public class Card : MonoBehaviour
         if (InGameManager.Instance.isCanInput && !isFlip)
         {
             //Debug.Log("A");
+            SoundControl.Instance.PlayEffect(flipSound);
             GameData.flipCount++;
             isFlip = true;
             anim.SetBool("isOpen", true);

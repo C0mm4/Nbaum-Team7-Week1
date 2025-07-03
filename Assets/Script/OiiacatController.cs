@@ -44,6 +44,6 @@ public class OiiacatController : MonoBehaviour, IPointerDownHandler, IPointerUpH
         isPointerDown = false;
         pointerDownTimer = 0f;
 
-        catAnimator.SetBool("OiiaMoving", false);
+        catAnimator.SetBool("OiiaMoving", false);        
     }
 }

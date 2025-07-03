@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
         }
         gameData = new GameData();
         gameData.Init();
+
+        
     }
 
 

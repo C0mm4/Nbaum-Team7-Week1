@@ -5,9 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class CreditButton : MonoBehaviour
 {
-
-    public static CreditButton Instance; // Singleton instance
-
     public GameObject Credit; // Reference to the Credit button GameObject
     public GameObject backButton; // Reference to the Back button GameObject
 
@@ -20,19 +17,15 @@ public class CreditButton : MonoBehaviour
     {   // Load the game scene (assuming it's named "GameScene")
         Credit.SetActive(true);
         backButton.SetActive(true);
+
+        trapCardPlay();
      
     }
 
     public void trapCardPlay()
-    { 
-    if (Instance == null)
-        TrapCard = GetComponent<AudioSource>();
-
-    else         
-            TrapCard = Instance.GetComponent<AudioSource>();
-
-        bgmusic.Pause();
-        TrapCard.Play(); 
+    {
+        SoundControl.Instance.PauseBGM();
+        SoundControl.Instance.PlayBGM(ResourceManager.Instance.LoadAudioClip("Sounds/BGM/TrapCard"));
     }
 
   

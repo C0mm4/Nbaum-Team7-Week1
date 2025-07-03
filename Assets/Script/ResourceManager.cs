@@ -66,4 +66,13 @@ public class ResourceManager : MonoBehaviour
     {
         return descriptions;
     }
+
+    public AudioClip LoadAudioClip(string path)
+    {
+        AudioClip audioClip = null;
+
+        audioClip = Resources.Load<AudioClip>(path);
+
+        return audioClip;
+    }
 }

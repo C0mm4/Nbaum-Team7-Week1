@@ -349,6 +349,7 @@ MonoBehaviour:
   effect_anim: {fileID: 3783340655325652190}
   card: 
   isFlip: 0
+  flipSound: {fileID: 8300000, guid: d74f070046589944181f3fa7724623c6, type: 3}
 --- !u!95 &2295956448723826099
 Animator:
   serializedVersion: 5
