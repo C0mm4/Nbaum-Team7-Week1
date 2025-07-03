@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 9a1f3ea18ae75854ca3e59a61b394e6d
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - FlipEffects: {fileID: 8300000, guid: d74f070046589944181f3fa7724623c6, type: 3}
+  - matchEffects: {fileID: 8300000, guid: 79133a4987c7c3441b4c9dcd7d090ad3, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
