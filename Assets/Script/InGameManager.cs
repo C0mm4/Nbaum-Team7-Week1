@@ -103,6 +103,12 @@ public class InGameManager : MonoBehaviour
 
         GameStartSetting(Card_size);
         GameManager.Instance.GameStart();
+        Invoke("Delay", 1);
+    }
+
+    private void Delay()
+    {
+        GameManager.state = GameManager.gameState.InPlay;
     }
 
     private void Update()

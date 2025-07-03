@@ -21,6 +21,7 @@ public class AchievementContentUI : MonoBehaviour
         else
         {
 
+            hiding.SetActive(true);
             nameTxt.text = "???";
             descriptionTxt.text = "??????????????";
         }

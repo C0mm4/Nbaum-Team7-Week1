@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Threading.Tasks;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 public class GameManager : MonoBehaviour
 {
@@ -17,7 +19,7 @@ public class GameManager : MonoBehaviour
 
     public enum gameState
     {
-        Title, InPlay, Pause, Result, Menu,
+        Title, InPlay, Pause, Result, Menu, Loading,
     }
     public static gameState state;
 

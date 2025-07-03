@@ -10,11 +10,26 @@ public class DescCard : MonoBehaviour
     public Text descTxt;
     public Image img;
 
+    public GameObject hiding;
+
     public void SetData(Description desc)
     {
-        nameTxt.text = $"[{desc.player}/È¿°ú]";
+        nameTxt.text = $"[{desc.player}/È¿ï¿½ï¿½]";
         titleTxt.text = desc.title;
         descTxt.text = desc.description;
-        img.sprite = ResourceManager.Instance.GetPortrait(desc.img);
+        img.sprite = Resources.Load<Sprite>(desc.img);
+
+
+        if (PlayerPrefs.HasKey($"A{desc.id}"))
+        {
+            hiding.SetActive(false);
+
+        }
+        else
+        {
+
+            hiding.SetActive(true);
+        }
+
     }
 }

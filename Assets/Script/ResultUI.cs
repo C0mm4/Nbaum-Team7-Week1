@@ -24,7 +24,9 @@ public class ResultUI : MonoBehaviour
     public void OnGameClear()
     {
         descButton.OnClickDesc();
-        descView.SetDescView(ResourceManager.Instance.GetRandomDescription());
+        var randDesc = ResourceManager.Instance.GetRandomDescription();
+        PlayerPrefs.SetInt($"C{randDesc.id}", 1);
+        descView.SetDescView(randDesc);
         resultView.Init();
     }
 
