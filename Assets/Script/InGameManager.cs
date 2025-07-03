@@ -214,7 +214,7 @@ public class InGameManager : MonoBehaviour
         }
 
         //Test disable
-        //        Maincard = Maincard.OrderBy(x => Random.Range(0f, 24f)).ToList();
+                Maincard = Maincard.OrderBy(x => Random.Range(0f, 24f)).ToList();
         //
 
         for (int i = 0; i < Maincard.Count; i++)
