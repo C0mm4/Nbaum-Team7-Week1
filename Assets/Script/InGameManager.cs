@@ -22,7 +22,6 @@ public class InGameManager : MonoBehaviour
 
     public Text Timmer;
 
-    public float leftT;
 
     public bool isCanInput;
 
@@ -103,8 +102,6 @@ public class InGameManager : MonoBehaviour
         }
 
         GameStartSetting(Card_size);
-
-        leftT = 60f;
         GameManager.Instance.GameStart();
     }
 
@@ -113,10 +110,10 @@ public class InGameManager : MonoBehaviour
         //Debug.Log(GameManager.stageLevel);
         if(GameManager.state == GameManager.gameState.InPlay)
         {
-            leftT -= Time.deltaTime;
-            Timmer.text = leftT.ToString("N2");
+            GameData.leftT -= Time.deltaTime;
+            Timmer.text = GameData.leftT.ToString("N2");
 
-            if (leftT < 0f)
+            if (GameData.leftT < 0f)
             {
                 Timmer.text = "0.00";
                 GameManager.state = GameManager.gameState.Result;
@@ -146,6 +143,13 @@ public class InGameManager : MonoBehaviour
             }
             AchievementManager.OnMatchEvent();
             isCanInput = true;
+
+            GameData.matchCombo++;
+            if(GameData.maxCombo <= GameData.matchCombo)
+            {
+                GameData.maxCombo = GameData.matchCombo;
+            }
+            GameData.missCombo = 0;
         }
         else
         {
@@ -153,6 +157,9 @@ public class InGameManager : MonoBehaviour
             Two.CloseCard();
             Invoke("FailEvent", 0.7f);
             AchievementManager.OnMatchFailEvent();
+
+            GameData.matchCombo = 0;
+            GameData.missCombo++;
         }
 
         card_reset();
@@ -214,7 +221,7 @@ public class InGameManager : MonoBehaviour
         }
 
         //Test disable
-                Maincard = Maincard.OrderBy(x => Random.Range(0f, 24f)).ToList();
+        Maincard = Maincard.OrderBy(x => Random.Range(0f, 24f)).ToList();
         //
 
         for (int i = 0; i < Maincard.Count; i++)
@@ -265,9 +272,9 @@ public class InGameManager : MonoBehaviour
             Check_nums = PlayerPrefs.GetFloat($"Time{GameManager.stageLevel}");
         }
 
-        if (Check_nums < leftT)
+        if (Check_nums < GameData.leftT)
         {
-            PlayerPrefs.SetFloat($"Time{GameManager.stageLevel}", leftT);
+            PlayerPrefs.SetFloat($"Time{GameManager.stageLevel}", GameData.leftT);
         }
 
     }

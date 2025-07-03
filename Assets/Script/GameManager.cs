@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     private static bool isFirstRun = true;
     public bool isRun;
 
+
+    public static GameData gameData;
+
     public enum gameState
     {
         Title, InPlay, Pause, Result, Menu,
@@ -36,12 +39,15 @@ public class GameManager : MonoBehaviour
             }
             isFirstRun = false;
         }
+        gameData = new GameData();
+        gameData.Init();
     }
 
 
     public void GameStart()
     {
         state = gameState.InPlay;
+        GameData.startGame();
     }
 
     public void GameClear()

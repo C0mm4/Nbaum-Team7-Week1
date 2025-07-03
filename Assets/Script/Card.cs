@@ -63,6 +63,7 @@ public class Card : MonoBehaviour
         if (InGameManager.Instance.isCanInput && !isFlip)
         {
             //Debug.Log("A");
+            GameData.flipCount++;
             isFlip = true;
             anim.SetBool("isOpen", true);
             Invoke("OpenCardHanlder", 0.5f);

@@ -13,7 +13,6 @@ public class AchievementManager : MonoBehaviour
     public static Queue<string> newAchievements = new Queue<string>();
     public AchievementUI achievementUI;
 
-    public static GameData gameData;
 
     public GameObject achievementUIPrefs;
 
@@ -35,8 +34,6 @@ public class AchievementManager : MonoBehaviour
             CreateUI();
         }
 
-        gameData = new GameData();
-        gameData.Init();
 
         LoadAchivements();
 
@@ -44,8 +41,8 @@ public class AchievementManager : MonoBehaviour
 
     public void OnClickTitle()
     {
-        gameData.titleClickCnt++;
-        if(gameData.titleClickCnt >= 5)
+        GameData.Instance.titleClickCnt++;
+        if(GameData.Instance.titleClickCnt >= 5)
         {
             AddAchievement("5");
         }
