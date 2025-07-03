@@ -6,6 +6,8 @@ public class SoundControl : MonoBehaviour
 {
     [SerializeField] private AudioClip FlipEffects; // Array to hold sound effects
     [SerializeField] private AudioClip matchEffects; // Array to hold sound effects
+    [SerializeField] private AudioClip bgmusicBGM;
+    [SerializeField] private AudioClip TrapCardBGM;
 
 
     private AudioSource audioSource; // Reference to the AudioSource component
