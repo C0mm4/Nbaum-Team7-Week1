@@ -280,19 +280,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 127997182}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 319385239}
-        m_TargetAssemblyTypeName: ArchievementManager, Assembly-CSharp
-        m_MethodName: OnClickTitle
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &142319501
 GameObject:
   m_ObjectHideFlags: 0
@@ -1513,7 +1501,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    m_Font: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     m_FontSize: 10
     m_FontStyle: 0
     m_BestFit: 0
@@ -1549,15 +1537,15 @@ PrefabInstance:
     - target: {fileID: 1062706044200372861, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+      objectReference: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     - target: {fileID: 3468161073043725831, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+      objectReference: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     - target: {fileID: 5520045520577150837, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
-      objectReference: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+      objectReference: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     - target: {fileID: 6427932682083162141, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
       propertyPath: m_Pivot.x
       value: 1
@@ -1925,7 +1913,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    m_Font: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     m_FontSize: 24
     m_FontStyle: 0
     m_BestFit: 0
@@ -2113,19 +2101,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 857609100}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 236505567}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnClickGameStartBtn
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &857609100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2234,7 +2210,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    m_Font: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -2313,7 +2289,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    m_Font: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
@@ -2392,7 +2368,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    m_Font: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -2953,7 +2929,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    m_Font: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -3188,7 +3164,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    m_Font: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
@@ -3386,7 +3362,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    m_Font: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
@@ -3525,19 +3501,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1791180604}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 236505567}
-        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnClickAchievementListUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1791180604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3634,7 +3598,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    m_Font: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     m_FontSize: 14
     m_FontStyle: 0
     m_BestFit: 0
@@ -3713,7 +3677,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 12800000, guid: 356d89d2c9849cc4e8d8c95e63abaac9, type: 3}
+    m_Font: {fileID: 12800000, guid: ba8f4494130138647905235da2c4705e, type: 3}
     m_FontSize: 45
     m_FontStyle: 0
     m_BestFit: 0
@@ -4089,7 +4053,7 @@ GameObject:
   - component: {fileID: 2054643090}
   - component: {fileID: 2054643089}
   m_Layer: 5
-  m_Name: Back
+  m_Name: LevelSelectBack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

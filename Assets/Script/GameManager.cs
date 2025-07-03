@@ -29,6 +29,10 @@ public class GameManager : MonoBehaviour
     {
         if (instance == null) 
             instance = this;
+        else
+        {
+            Destroy(gameObject);
+        }
         state = gameState.Title;
         DontDestroyOnLoad(gameObject);
 
@@ -44,7 +48,7 @@ public class GameManager : MonoBehaviour
         gameData = new GameData();
         gameData.Init();
 
-        
+        OnLoadTitle();
     }
 
 
@@ -94,5 +98,64 @@ public class GameManager : MonoBehaviour
     {
         GameObject go = GameObject.Find("Canvas").transform.Find("LevelSelectUI").gameObject;
         go.SetActive(false);
+    }
+
+    public void GoToTitle()
+    {
+        SceneManager.sceneLoaded += OnLoadTitleCallback;
+        SceneManager.LoadScene("StartScene");
+    }
+
+    public void OnLoadTitle()
+    {
+        GameObject go = FindGameObject("StartBtn");
+        Button btn = go.GetComponent<Button>();
+        if (btn != null)
+        {
+            btn.onClick.RemoveAllListeners();
+            btn.onClick.AddListener(OnClickGameStartBtn);
+        }
+
+        go = FindGameObject("LevelSelectBack");
+        btn = go.GetComponent<Button>();
+        if (btn != null)
+        {
+            btn.onClick.RemoveAllListeners();
+            btn.onClick.AddListener(OnClickBackInLevelSelectUI);
+        }
+        
+        go = FindGameObject("AchievementButton");
+        btn = go.GetComponent<Button>();
+        if (btn != null)
+        {
+            btn.onClick.RemoveAllListeners();
+            btn.onClick.AddListener(OnClickAchievementListUI);
+        }
+
+        stageLevel = 0;
+        SceneManager.sceneLoaded -= OnLoadTitleCallback;
+    }
+
+    public void OnLoadTitleCallback(Scene scene, LoadSceneMode mode)
+    {
+        OnLoadTitle();
+        SoundControl.Instance.OnLoadTitle();
+        AchievementManager.Instance.OnLoadTitle();
+    }
+
+
+    public GameObject FindGameObject(string name)
+    {
+        Transform[] allTransforms = GameObject.FindObjectsOfType<Transform>(true);
+        foreach (Transform t in allTransforms)
+        {
+            if (t.name == name)
+            {
+                GameObject go = t.gameObject;
+                Debug.Log("찾음: " + go.name);
+                return go;
+            }
+        }
+        return null;
     }
 }

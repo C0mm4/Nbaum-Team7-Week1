@@ -19,9 +19,15 @@ public class SoundControl : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
+        {
             instance = this;
-
+            DontDestroyOnLoad(gameObject);
+        }
+        else if (instance != this)
+        {
+            Destroy(gameObject);
+        }
         audioSource = this.GetComponent<AudioSource>(); // Get the AudioSource component attached to this GameObject
 
         DontDestroyOnLoad(gameObject);
@@ -41,5 +47,11 @@ public class SoundControl : MonoBehaviour
     public void PlayEffect(AudioClip clip)
     {
         EffectInstance.PlayOneShot(clip);
+    }
+
+    public void OnLoadTitle()
+    {
+        PauseBGM();
+        PlayBGM(Resources.Load<AudioClip>("Sounds/BGM/bgmusic"));
     }
 }

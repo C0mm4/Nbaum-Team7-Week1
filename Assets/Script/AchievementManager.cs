@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Xml.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AchievementManager : MonoBehaviour
 {
@@ -25,6 +26,10 @@ public class AchievementManager : MonoBehaviour
         {
             instance = this;
         }
+        else if(instance != null)
+        {
+            Destroy(gameObject);
+        }
 
         DontDestroyOnLoad(gameObject);
 
@@ -37,6 +42,19 @@ public class AchievementManager : MonoBehaviour
 
         LoadAchivements();
 
+        OnLoadTitle();
+    }
+
+    public void OnLoadTitle()
+    {
+        GameObject go = GameObject.Find("GameTitle");
+        Debug.Log(go);
+        Button btn = go.GetComponent<Button>();
+        if (btn != null)
+        {
+            btn.onClick.RemoveAllListeners();
+            btn.onClick.AddListener(OnClickTitle);
+        }
     }
 
     public void OnClickTitle()

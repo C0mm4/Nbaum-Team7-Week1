@@ -7,7 +7,6 @@ public class EndButton : MonoBehaviour
 {
     public void OnClickEnd()
     {
-        SoundControl.Instance.PauseBGM();
-        SceneManager.LoadScene("StartScene");
+        GameManager.Instance.GoToTitle();
     }
 }
