@@ -394,11 +394,6 @@ MonoBehaviour:
   R: 0
   G: 0
   B: 0
---- !u!224 &148760346 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6427932682083162141, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
-  m_PrefabInstance: {fileID: 661329114}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &216942659
 GameObject:
   m_ObjectHideFlags: 0
@@ -650,7 +645,6 @@ RectTransform:
   - {fileID: 1367064345}
   - {fileID: 1213848998}
   - {fileID: 142319502}
-  - {fileID: 148760346}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -687,7 +681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac7dcf5394c93484bb92755bc62e6a28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  achievementUI: {fileID: 578303975}
+  achievementUI: {fileID: 0}
   achievementUIPrefs: {fileID: 772872647412838367, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
 --- !u!4 &319385240
 Transform:
@@ -1471,17 +1465,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 578206009}
   m_CullTransparentMesh: 1
---- !u!114 &578303975 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 9009547488339770939, guid: ce66b90a1443c04479dc598cd947aaf9, type: 3}
-  m_PrefabInstance: {fileID: 661329114}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e2780b5d22638249bcc0a436ce0454c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &643041696
 GameObject:
   m_ObjectHideFlags: 0

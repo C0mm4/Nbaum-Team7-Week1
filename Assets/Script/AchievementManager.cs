@@ -79,7 +79,10 @@ public class AchievementManager : MonoBehaviour
 
     public static void OnMatchFailEvent()
     {
-
+        if(GameData.missCombo >= 5)
+        {
+            AddAchievement("13");
+        }
     }
 
     public static void OnEndEvent()
