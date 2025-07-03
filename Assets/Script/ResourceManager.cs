@@ -17,9 +17,16 @@ public class ResourceManager : MonoBehaviour
 
     private void Awake()
     {
+        if (instance)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
         LoadDescription();

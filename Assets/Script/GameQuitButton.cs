@@ -11,7 +11,7 @@ public class GameQuitButton : MonoBehaviour
 
     public void GameQuit()
     {
-      
+
         Application.Quit(); 
 
     }
