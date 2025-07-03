@@ -50,7 +50,7 @@ public class InGameManager : MonoBehaviour
         "SMC_Card_Mickey", 
         "SMC_Card_Mika"};
 
-    int Card_size = 0;
+    public int Card_size = 0;
 
     List<string> Maincard = null;
 

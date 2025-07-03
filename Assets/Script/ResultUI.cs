@@ -25,7 +25,7 @@ public class ResultUI : MonoBehaviour
     {
         descButton.OnClickDesc();
         descView.SetDescView(ResourceManager.Instance.GetRandomDescription());
-
+        resultView.Init();
         // todo: resultView
     }
 

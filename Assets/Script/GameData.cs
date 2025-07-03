@@ -10,14 +10,14 @@ public class GameData
     public static int winStreak;
     public static int loseStreak;
     public static bool isFirstrun;
-    public static int matchCombo;
-    public static int maxCombo;
-    public static int flipCount;
-    public static int missCombo;
+    public static int matchCombo; // Ä«µå ¸ÅÄª ÄÞº¸¼ö
+    public static int maxCombo; // ÃÖ°í ÄÞº¸ È½¼ö
+    public static int flipCount; // µÚÁýÀº È½¼ö
+    public static int missCombo; // Ä«µå ¸ÅÄª ½ÇÆÐ ÄÞº¸ È½¼ö
     public static float lastMatchT;
 
 
-    public static float leftT;
+    public static float leftT; // Å¬¸®¾î ½Ã ³²Àº ½Ã°£
 
     public static float titleTime = 0;
 
