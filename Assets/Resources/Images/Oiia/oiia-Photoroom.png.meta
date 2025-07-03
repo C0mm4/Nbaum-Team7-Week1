@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -121,7 +121,196 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: oiia-Photoroom_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 666.6666
+        width: 250
+        height: 333.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99c31a5e2fd6e3442a54950b3d05ab78
+      internalID: -885791738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiia-Photoroom_1
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 666.6666
+        width: 250
+        height: 333.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0892d0ae2591bc468dacacf60c4a122
+      internalID: -1942118615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiia-Photoroom_2
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 666.6666
+        width: 250
+        height: 333.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5f5a82f6a4527945a44d491c929ea75
+      internalID: 874101149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiia-Photoroom_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 333.66666
+        width: 250
+        height: 333.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0746d1a0621b724ebf058ca494981a9
+      internalID: -2123394127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiia-Photoroom_4
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 333.66666
+        width: 250
+        height: 333.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e25cebf5134513048ba28cbcdc9c08a8
+      internalID: 79788138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiia-Photoroom_5
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 333.66666
+        width: 250
+        height: 333.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e48cc467f590c1a4a87ed4369ba59e47
+      internalID: 1667143722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiia-Photoroom_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0.6666565
+        width: 250
+        height: 333.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 473fd3d910732cd428120da0ced5acb0
+      internalID: -1938462677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiia-Photoroom_7
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0.6666565
+        width: 250
+        height: 333.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 553162f2bf2f0fe4fa87aea371fc0512
+      internalID: 2090940606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: oiia-Photoroom_8
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0.6666565
+        width: 250
+        height: 333.33334
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eba93196570b0e4d87ed586e5a64115
+      internalID: -254128689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -132,7 +321,16 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      oiia-Photoroom_0: -885791738
+      oiia-Photoroom_1: -1942118615
+      oiia-Photoroom_2: 874101149
+      oiia-Photoroom_3: -2123394127
+      oiia-Photoroom_4: 79788138
+      oiia-Photoroom_5: 1667143722
+      oiia-Photoroom_6: -1938462677
+      oiia-Photoroom_7: 2090940606
+      oiia-Photoroom_8: -254128689
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
