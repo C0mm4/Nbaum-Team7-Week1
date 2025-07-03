@@ -51,11 +51,15 @@ public class ResultView : MonoBehaviour
         if (PlayerPrefs.HasKey($"Time{GameManager.stageLevel}"))
         {
             bestClearTime = PlayerPrefs.GetFloat($"Time{GameManager.stageLevel}");
-            
         }
 
         dataTexts[3].text = $"베스트 클리어 타임({level}) : " + bestClearTime.ToString("N2");
-        float success_ratio = ((float)((InGameManager.Instance.Card_size - InGameManager.Instance.leftCards) / 2) / (float)GameData.flipCount) * 100f;
+
+        float success_ratio = 0f;
+        if (GameData.flipCount != 0)
+        {
+            success_ratio = ((float)((InGameManager.Instance.Card_size - InGameManager.Instance.leftCards) / 2) / (float)(GameData.flipCount / 2)) * 100f;
+        }
         dataTexts[4].text = $"카드 매칭 성공률 : " + success_ratio.ToString("N2") + "%";
     }
 }

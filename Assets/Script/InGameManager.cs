@@ -178,7 +178,7 @@ public class InGameManager : MonoBehaviour
         ResultUI resultUI = resultPanel.GetComponent<ResultUI>();
         if (resultUI != null)
         {
-            resultUI.Init();
+            resultUI.OnGameClear();
         }
         TextImg.transform.SetAsFirstSibling();
 
@@ -193,7 +193,7 @@ public class InGameManager : MonoBehaviour
         ResultUI resultUI = resultPanel.GetComponent<ResultUI>();
         if (resultUI != null)
         {
-            resultUI.Init();
+            resultUI.OnGameOver();
         }
         TextImg.transform.SetAsFirstSibling();
         GameManager.Instance.GameFail();

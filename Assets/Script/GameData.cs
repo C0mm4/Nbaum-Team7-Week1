@@ -63,7 +63,7 @@ public class GameData
         maxCombo = 0;
         flipCount = 0;
         missCombo = 0;
-        leftT = 60f;
+        leftT = 5f;
         lastMatchT = Time.time;
     }
 }
