@@ -61,7 +61,7 @@ public class Card : MonoBehaviour
             { 
                 if(Check_TIme > 4.0f)
                 {
-                    Hidden_Card_Speed = Random.Range(4f, 20f);
+                    Hidden_Card_Speed = Random.Range(2f, 10f);
                     Check_TIme = 0.0f;
                 }
                 MoveCard();
