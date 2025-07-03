@@ -48,6 +48,8 @@ public class ResultView : MonoBehaviour
 
         BestClearTimeText.text = $"베스트 클리어 타임({level}) :";
 
+        Debug.Log("Check High score");
+        Debug.Log($"Time{GameManager.stageLevel}");
         if (PlayerPrefs.HasKey($"Time{GameManager.stageLevel}"))
         {
             float bestClearTime = PlayerPrefs.GetFloat($"Time{GameManager.stageLevel}");
@@ -55,6 +57,7 @@ public class ResultView : MonoBehaviour
         }
         else
         {
+            Debug.Log("no high score");
             dataTexts[3].text = "00.00";
         }
 

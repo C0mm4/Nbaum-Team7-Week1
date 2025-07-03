@@ -266,7 +266,8 @@ public class InGameManager : MonoBehaviour
 
     private void EndResult()
     {
-        float Check_nums = float.MaxValue;
+        float Check_nums = float.MinValue;
+        Debug.Log($"Time{GameManager.stageLevel}");
         if (PlayerPrefs.HasKey($"Time{GameManager.stageLevel}"))
         {
             Check_nums = PlayerPrefs.GetFloat($"Time{GameManager.stageLevel}");
@@ -277,5 +278,6 @@ public class InGameManager : MonoBehaviour
             PlayerPrefs.SetFloat($"Time{GameManager.stageLevel}", GameData.leftT);
         }
 
+        Debug.Log("Save high score");
     }
 }
