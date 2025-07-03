@@ -26,6 +26,7 @@ public class OiiacatController : MonoBehaviour, IPointerDownHandler, IPointerUpH
             pointerDownTimer += Time.deltaTime;
             if (pointerDownTimer >= longPressDuration)
             {
+                AchievementManager.AddAchievement("11");
                 catAnimator.SetBool("OiiaMoving", true);
             }
         }
