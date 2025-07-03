@@ -43,7 +43,7 @@ public class Card : MonoBehaviour
 
     void Update()
     {
-        if (GameManager.stageLevel == 3)
+        if (GameManager.stageLevel == 3 && GameManager.state == GameManager.gameState.InPlay)
         {
             if (hidden_firstCheck)
             {
