@@ -10,7 +10,10 @@ public class ResourceManager : MonoBehaviour
     public JsonLoader jsonLoader = new JsonLoader();
 
     Dictionary<string, Sprite> portraits = new Dictionary<string, Sprite>();
+    Dictionary<string, AudioClip> audioClips = new Dictionary<string, AudioClip>();
+
     List<Description> descriptions = new();
+    
 
     private void Awake()
     {
@@ -21,7 +24,6 @@ public class ResourceManager : MonoBehaviour
 
         LoadDescription();
 
-        // temporal
         List<Description> temp = new List<Description>(descriptions);
 
         foreach (Description description in temp)
@@ -51,6 +53,15 @@ public class ResourceManager : MonoBehaviour
 
     public Sprite GetPortrait(string path)
     {
+        if (!portraits.ContainsKey(path))
+        {
+            Sprite sprite = Resources.Load<Sprite>(path);
+            if (sprite)
+            {
+                portraits.Add(path, sprite);
+            }
+        }
+
         return portraits[path];
     }
 
@@ -69,10 +80,16 @@ public class ResourceManager : MonoBehaviour
 
     public AudioClip LoadAudioClip(string path)
     {
-        AudioClip audioClip = null;
+        if (!audioClips.ContainsKey(path))
+        {
+            AudioClip audioClip = Resources.Load<AudioClip>(path);
 
-        audioClip = Resources.Load<AudioClip>(path);
+            if(audioClip)
+            {
+                audioClips.Add(path, audioClip);
+            }
+        }
 
-        return audioClip;
+        return audioClips[path];
     }
 }
