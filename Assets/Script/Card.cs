@@ -131,7 +131,7 @@ public class Card : MonoBehaviour
     public void Setting(string image)
     {
         card = image;
-        Images.sprite = Resources.Load<Sprite>("Images/Portrait/"+image);
+        Images.sprite = ResourceManager.Instance.GetPortrait("Images/Portrait/" + image);
         
     }
 

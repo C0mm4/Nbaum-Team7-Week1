@@ -15,6 +15,6 @@ public class DescCard : MonoBehaviour
         nameTxt.text = $"[{desc.player}/È¿°ú]";
         titleTxt.text = desc.title;
         descTxt.text = desc.description;
-        img.sprite = Resources.Load<Sprite>(desc.img);
+        img.sprite = ResourceManager.Instance.GetPortrait(desc.img);
     }
 }

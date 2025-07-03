@@ -15,7 +15,7 @@ public class DescriptionCardUI : MonoBehaviour
     {
         nameTxt.text = desc.title;
         descriptionTxt.text = desc.description;
-        img.sprite = Resources.Load<Sprite>(desc.img);
+        img.sprite = ResourceManager.Instance.GetPortrait(desc.img);
 
         playerTxt.text = $"[{desc.player}/È¿°ú]";
     }
