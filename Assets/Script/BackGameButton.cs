@@ -11,7 +11,7 @@ public class BackGameButton : MonoBehaviour
     public GameObject Effect_Slider;
     public void OnClickBackGameButton()
     {
-        
+        GameManager.state = GameManager.gameState.InPlay;
         Configuration.SetActive(false); // Show the configuration panel
     }
 }

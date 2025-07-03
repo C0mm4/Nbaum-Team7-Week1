@@ -13,7 +13,6 @@ public class ConfigurationButton : MonoBehaviour
     public GameObject Master_Slider;
     public GameObject BGM_Slider;
     public GameObject Effect_Slider;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -23,8 +22,9 @@ public class ConfigurationButton : MonoBehaviour
 
     public void OnClickConfigurationButton()
     { 
-      audioSource.PlayOneShot(clip); // Play the sound effect when the button is clicked
-      Configuration.SetActive(true); // Show the configuration panel
+        audioSource.PlayOneShot(clip); // Play the sound effect when the button is clicked
+        Configuration.SetActive(true); // Show the configuration panel
+        GameManager.state = GameManager.gameState.Menu;
     }
 
     

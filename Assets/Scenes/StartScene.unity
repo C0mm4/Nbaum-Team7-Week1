@@ -2836,7 +2836,6 @@ GameObject:
   - component: {fileID: 1367064345}
   - component: {fileID: 1367064347}
   - component: {fileID: 1367064346}
-  - component: {fileID: 1367064348}
   - component: {fileID: 1367064349}
   m_Layer: 0
   m_Name: Credit
@@ -2903,18 +2902,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1367064344}
   m_CullTransparentMesh: 1
---- !u!114 &1367064348
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1367064344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e61b3880f4173b841ad0ab2f7a32673d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1367064349
 MonoBehaviour:
   m_ObjectHideFlags: 0
