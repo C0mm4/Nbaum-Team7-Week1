@@ -13,6 +13,12 @@ public class SoundSliderUI : MonoBehaviour
     public Slider BGMSlider; // Reference to the UI Slider component
     public Slider EffectSlider;
 
+
+    public AudioMixer mixer;
+    public Slider masterslider;
+    public Slider bgmslider;
+    public Slider effectslider;
+
     public void SetBGM(AudioClip audioClip)
     {
         bgm.clip = audioClip;
