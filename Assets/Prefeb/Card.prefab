@@ -430,6 +430,7 @@ MonoBehaviour:
   back: {fileID: 4310143687632285949}
   Effect: {fileID: 4890272438946384103}
   Images: {fileID: 2534523385078058974}
+  Frames: {fileID: 2267080224448959508}
   anim: {fileID: 2295956448723826099}
   effect_anim: {fileID: 3783340655325652190}
   card: 

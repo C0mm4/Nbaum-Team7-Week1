@@ -14,6 +14,7 @@ public class Card : MonoBehaviour
     public GameObject Effect;
 
     public SpriteRenderer Images;
+    public SpriteRenderer Frames;
 
     public Animator anim;
     public Animator effect_anim;
@@ -158,6 +159,7 @@ public class Card : MonoBehaviour
         effect_anim.SetBool("EndOn", true);
         yield return new WaitForSeconds(0.2f);
         Images.enabled = false;
+        Frames.enabled = false;
         yield return new WaitForSeconds(0.3f);
         Destroy(gameObject);
     }
