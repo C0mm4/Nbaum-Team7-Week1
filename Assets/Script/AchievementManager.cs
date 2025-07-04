@@ -48,7 +48,6 @@ public class AchievementManager : MonoBehaviour
     public void OnLoadTitle()
     {
         GameObject go = GameObject.Find("GameTitle");
-        Debug.Log(go);
         Button btn = go.GetComponent<Button>();
         if (btn != null)
         {
@@ -148,10 +147,6 @@ public class AchievementManager : MonoBehaviour
         }
         if(GameManager.state == GameManager.gameState.Title)
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                AddAchievement("7");
-            }
             GameData.titleTime += Time.deltaTime;
             if(GameData.titleTime >= 300f)
             {
