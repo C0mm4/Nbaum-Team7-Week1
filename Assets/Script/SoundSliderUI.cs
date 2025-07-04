@@ -52,12 +52,7 @@ public class SoundSliderUI : MonoBehaviour
         effectslider.value = PlayerPrefs.GetFloat("EffectVolume", 0.5f);
     }
 
-    public void OnDisable()
-    {
-        masterslider.onValueChanged.RemoveAllListeners();
-        bgmslider.onValueChanged.RemoveAllListeners();
-        effectslider.onValueChanged.RemoveAllListeners();
-    }
+    
 
     public void SetLevel(float sliderValue)
     {

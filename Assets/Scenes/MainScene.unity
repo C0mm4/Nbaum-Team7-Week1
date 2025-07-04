@@ -1318,6 +1318,10 @@ MonoBehaviour:
   MasterSlider: {fileID: 1311985874}
   BGMSlider: {fileID: 320013234}
   EffectSlider: {fileID: 1218786079}
+  mixer: {fileID: 24100000, guid: bd29753897eaf8e46b99bdd0862763b0, type: 2}
+  masterslider: {fileID: 1311985874}
+  bgmslider: {fileID: 320013234}
+  effectslider: {fileID: 1218786079}
 --- !u!4 &422437334
 Transform:
   m_ObjectHideFlags: 0
@@ -5038,6 +5042,10 @@ MonoBehaviour:
   MasterSlider: {fileID: 1311985874}
   BGMSlider: {fileID: 320013234}
   EffectSlider: {fileID: 1218786079}
+  mixer: {fileID: 0}
+  masterslider: {fileID: 1311985874}
+  bgmslider: {fileID: 320013234}
+  effectslider: {fileID: 1218786079}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
