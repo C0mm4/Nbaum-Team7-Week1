@@ -108,6 +108,7 @@ public class InGameManager : MonoBehaviour
 
     private void Delay()
     {
+        if(GameManager.state == GameManager.gameState.Loading)
         GameManager.state = GameManager.gameState.InPlay;
     }
 

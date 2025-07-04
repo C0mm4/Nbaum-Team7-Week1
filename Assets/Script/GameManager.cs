@@ -70,7 +70,7 @@ public class GameManager : MonoBehaviour
 
     public void GameStart()
     {
-        state = gameState.InPlay;
+        state = gameState.Loading;
         GameData.startGame();
     }
 
