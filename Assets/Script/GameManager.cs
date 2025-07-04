@@ -39,13 +39,24 @@ public class GameManager : MonoBehaviour
         state = gameState.Title;
         DontDestroyOnLoad(gameObject);
 
-        Debug.Log(isFirstRun);
-        if (isFirstRun)
+#if UNITY_EDITOR
+        DebugMode = true;
+#else
+        DebugMode = false;
+#endif
+
+        if (PlayerPrefs.HasKey("isFirstRun"))
         {
             if (DebugMode)
             {
                 PlayerPrefs.DeleteAll();
             }
+            isFirstRun = false;
+        }
+
+        if (isFirstRun)
+        {
+            PlayerPrefs.SetInt("isFirstRun", 1);
             isFirstRun = false;
         }
         gameData = new GameData();
