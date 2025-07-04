@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Security.Cryptography;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class GameManager : MonoBehaviour
 
 
     public static GameData gameData;
+
+    public GameObject titleEndMenu;
 
     public enum gameState
     {
@@ -49,6 +52,19 @@ public class GameManager : MonoBehaviour
         gameData.Init();
 
         OnLoadTitle();
+    }
+
+    public void Update()
+    {
+        if(state == gameState.Title)
+        {
+            if(Time.time - titleEndMenu.GetComponent<GameEndUI>().EndT >= 1f)
+                if (Input.GetKeyUp(KeyCode.Escape)) 
+                {
+                    titleEndMenu.SetActive(true);
+                }
+
+        }
     }
 
 
@@ -131,6 +147,8 @@ public class GameManager : MonoBehaviour
             btn.onClick.RemoveAllListeners();
             btn.onClick.AddListener(OnClickAchievementListUI);
         }
+
+        titleEndMenu = FindGameObject("GameEndUI");
 
         stageLevel = 0;
         SceneManager.sceneLoaded -= OnLoadTitleCallback;
