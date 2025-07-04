@@ -13,14 +13,6 @@ public class SoundSliderUI : MonoBehaviour
     public Slider BGMSlider; // Reference to the UI Slider component
     public Slider EffectSlider;
 
-    public AudioMixer mixer;
-    public Slider masterslider;
-    public Slider bgmslider;
-    public Slider effectslider;
-
-
-
-
     public void SetBGM(AudioClip audioClip)
     {
         bgm.clip = audioClip;
@@ -28,18 +20,21 @@ public class SoundSliderUI : MonoBehaviour
 
     public void SetMasterVolume()
     {
+        PlayerPrefs.SetFloat("MasterVolumeValue", MasterSlider.value);
         audioMixer.SetFloat("Master", Mathf.Log10(MasterSlider.value) *20);
         PlayerPrefs.SetFloat("MasterVolume", MasterSlider.value);
     }
 
     public void SetBGMVolume()
     {
+        PlayerPrefs.SetFloat("BGMVolumeValue", BGMSlider.value);
         audioMixer.SetFloat("BGM", Mathf.Log10(BGMSlider.value) * 20);
         PlayerPrefs.SetFloat("BGMVolume", BGMSlider.value);
     }
 
     public void SetEffectVolume()
     {
+        PlayerPrefs.SetFloat("EffectVolumeValue", EffectSlider.value);
         audioMixer.SetFloat("Effect", Mathf.Log10(EffectSlider.value) * 20);
         PlayerPrefs.SetFloat("EffectVolume", EffectSlider.value);
     }
